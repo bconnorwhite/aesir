@@ -4,7 +4,7 @@
 		<div class='wrap'>
 			<div id='title'>
 				<h1>Connor <strong>White</strong></h1>
-				<h2><i>Developer | Designer | Dreamer</i></h2>
+				<h2><i>Developer. Designer. Dreamer.</i></h2>
 			</div>
 		</div>
 	</div>

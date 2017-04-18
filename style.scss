@@ -279,10 +279,13 @@ html {
           text-transform: lowercase;
           margin: 10px 0;
           letter-spacing: 0.18rem;
+					border-bottom: 1px solid rgba(256,256,256,0.3);
+    			width: 299px;
+    			padding-bottom: 5px;
         }
         h2 {
 					padding-left: 2px;
-          font-size: 0.85rem;
+          font-size: 1rem;
           text-transform: uppercase;
           margin: 0;
           font-weight: 300;
