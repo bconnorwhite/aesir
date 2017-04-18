@@ -18,7 +18,7 @@ if (function_exists('add_theme_support')) {
 function register(){
 	wp_register_style('style', get_stylesheet_uri());
 	$query_args = array(
-		'family' => 'Open+Sans:300,300i,400|Merriweather:300,400,700',
+		'family' => 'Source+Sans+Pro:300,300i,400|Source+Sans+Serif:300,400,700',
 		'subset' => 'latin,latin-ext');
 	wp_register_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 

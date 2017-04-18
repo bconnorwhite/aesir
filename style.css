@@ -1,5 +1,5 @@
 /*
-Theme Name: Vanir
+Theme Name: Aesir
 Author: Connor White
 */
 html, body, div, span, applet, object, iframe,
@@ -136,7 +136,7 @@ html {
           html body .four-o-four .button-div {
             margin: 90px 0; } }
     html body #top {
-      background: url("/wp-content/themes/Vanir/img/header_full.jpg");
+      background: url("/wp-content/themes/Aesir/img/header_full.jpg");
       padding-top: 56.25%;
       background-size: contain !important;
       background-repeat: no-repeat !important;
@@ -146,25 +146,25 @@ html {
       color: #e5e5e5; }
       @media (max-width: 1920px) {
         html body #top {
-          background: url("/wp-content/themes/Vanir/img/header_1920.jpg"); } }
+          background: url("/wp-content/themes/Aesir/img/header_1920.jpg"); } }
       @media (max-width: 1600px) {
         html body #top {
-          background: url("/wp-content/themes/Vanir/img/header_1600.jpg"); } }
+          background: url("/wp-content/themes/Aesir/img/header_1600.jpg"); } }
       @media (max-width: 1440px) {
         html body #top {
-          background: url("/wp-content/themes/Vanir/img/header_1440.jpg");
+          background: url("/wp-content/themes/Aesir/img/header_1440.jpg");
           padding-top: 62.5%; } }
       @media (max-width: 1080px) {
         html body #top {
-          background: url("/wp-content/themes/Vanir/img/header_1080.jpg");
+          background: url("/wp-content/themes/Aesir/img/header_1080.jpg");
           padding-top: 66.7%; } }
       @media (max-width: 720px) {
         html body #top {
-          background: url("/wp-content/themes/Vanir/img/header_720_wide.jpg");
+          background: url("/wp-content/themes/Aesir/img/header_720_wide.jpg");
           padding-top: 90%; } }
       @media (max-width: 540px) {
         html body #top {
-          background: url("/wp-content/themes/Vanir/img/header_540.jpg");
+          background: url("/wp-content/themes/Aesir/img/header_540.jpg");
           padding-top: 125%; } }
       @media (max-width: 540px) {
         html body #top {
@@ -211,20 +211,13 @@ html {
           text-transform: lowercase;
           margin: 10px 0;
           letter-spacing: 0.18rem; }
-          @media (max-width: 1600px) {
-            html body #top #title h1 {
-              font-size: 2.7rem; } }
         html body #top #title h2 {
           padding-left: 2px;
-          font-size: 0.97rem;
+          font-size: 0.85rem;
           text-transform: uppercase;
           margin: 0;
           font-weight: 300;
           letter-spacing: 0.18rem; }
-          @media (max-width: 1600px) {
-            html body #top #title h2 {
-              padding-left: 1px;
-              font-size: 0.86rem; } }
     html body #about {
       font-family: "Source Serif Pro", serif;
       font-size: 1.75rem;
