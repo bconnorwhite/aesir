@@ -1,0 +1,78 @@
+$font: #686868;
+$link: #282828;
+$fill: #f8f8f8;
+$border: #e1e1e1;
+
+
+#login {
+  width: 280px;
+}
+.login {
+  background-color: #fff;
+  text-align: center;
+  .message, #login_error {
+    display: none;
+  }
+  h1 {
+    content: "Connor White";
+    a {
+      background: none;
+      width: 100%;
+      font-family: "Open Sans", sans-serif;
+      text-indent: 0;
+      color: #2c2c2c;
+      font-size: 1.5rem;
+      text-transform: lowercase;
+      font-weight: 300;
+      letter-spacing: 0.18em;
+      margin-bottom: -55px;
+      &:hover {
+        color: $font;
+      }
+    }
+  }
+  form {
+    border-top: 1px solid #686868;
+    padding-top: 35px;
+    padding-bottom: 24px;
+  }
+  #loginform {
+      padding-left: 0;
+      padding-right: 0;
+      box-shadow: none;
+      text-align: left;
+      p label {
+          color: $font;
+      }
+      .input, input {
+        border: 1px solid $border;
+      }
+  }
+  form .input, form input[type="checkbox"], input[type="text"] {
+    background: $fill !important;
+  }
+  input, .input {
+    box-shadow: none !important;
+  }
+  #nav a,
+  #backtoblog a {
+    display: none;
+    color: $link;
+    &:hover{
+      color: $font;
+    }
+  }
+}
+.wp-core-ui .button-primary{
+  background: #fff !important;
+  text-shadow: none;
+  color: $font;
+  transition: 0.25s ease;
+  border-radius: 0px;
+  border: 1px solid $border !important;
+  &:hover, &:focus, &:active {
+    background: #fff !important;
+    color: $link;
+    border: 1px solid $font !important;
+  }
+}
