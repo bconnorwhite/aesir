@@ -107,7 +107,7 @@ html {
         height: 20px;
         width: 25px;
         display: none;
-        padding: 14px 0;
+        padding: 22px 0;
         float: right;
         fill: #e5e5e5;
         cursor: pointer; }
@@ -120,7 +120,7 @@ html {
     html body .four-o-four {
       text-align: center; }
       html body .four-o-four h2 {
-        color: #fff;
+        color: #2c2c2c;
         font-size: 9rem;
         font-weight: 400;
         margin: 120px 0 30px; }
@@ -128,7 +128,7 @@ html {
           html body .four-o-four h2 {
             margin: 110px 0 30px; } }
       html body .four-o-four h3 {
-        color: #fff;
+        color: #2c2c2c;
         font-size: 2rem; }
       html body .four-o-four .button-div {
         margin: 110px 0; }
@@ -170,6 +170,8 @@ html {
         html body #top {
           color: #fff; } }
       html body #top #title {
+        text-align: center;
+        width: 18.75em;
         position: relative;
         top: -360px; }
         @media (max-width: 1280px) {
@@ -206,13 +208,12 @@ html {
           html body #top #title {
             top: -125px; } }
         html body #top #title h1 {
-          font-weight: 400;
+          font-weight: 300;
           font-size: 3rem;
           text-transform: lowercase;
           margin: 10px 0;
           letter-spacing: 0.18rem;
           border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-          width: 299px;
           padding-bottom: 5px; }
         html body #top #title h2 {
           padding-left: 2px;
@@ -221,9 +222,12 @@ html {
           margin: 0;
           font-weight: 300;
           letter-spacing: 0.18rem; }
+        html body #top #title strong {
+          font-weight: 600; }
     html body #about {
       font-family: "Source Serif Pro", serif;
-      font-size: 1.75rem;
+      letter-spacing: 0.01em;
+      font-size: 2.25rem;
       line-height: 3.5rem;
       padding: 5rem 130px;
       text-align: center;
@@ -232,6 +236,7 @@ html {
         html body #about {
           padding: 5rem 0; } }
       html body #about p {
+        letter-spacing: 0.01em;
         margin-bottom: 2.75rem; }
     html body .front #portfolio a:hover .shade, html body .front #portfolio a:focus .shade {
       background-color: rgba(44, 44, 44, 0.5); }
@@ -304,6 +309,7 @@ html {
       background-color: #fff;
       padding: 60px 15px;
       font-family: "Source Serif Pro", serif;
+      letter-spacing: 0.01em;
       font-size: 1.0625rem;
       color: #404040;
       line-height: 1.5em; }
@@ -349,6 +355,8 @@ html {
         font-family: "Source Sans Pro", sans-serif;
         font-style: italic;
         color: #2c2c2c; }
+      html body .content p {
+        font-size: 1.1875rem; }
       html body .content .button-div {
         text-align: center;
         padding: 75px 0 30px; }
@@ -364,11 +372,13 @@ html {
           padding: 4rem 3rem 5rem 3rem; } }
       html body #contact h2 {
         font-family: "Source Serif Pro", serif;
-        font-size: 2.5rem;
+        letter-spacing: 0.01em;
+        font-size: 2.75rem;
         font-weight: 400;
         line-height: 3.5rem; }
       html body #contact p {
-        font-size: 1.5rem;
+        font-weight: 200;
+        font-size: 1.625rem;
         margin-bottom: 3.5rem;
         line-height: 2.25rem; }
         @media (max-width: 960px) {
@@ -388,6 +398,8 @@ html {
         margin: 0 auto;
         color: #686868;
         transition: 1s ease; }
+        html body #contact form p {
+          font-size: 1.5rem; }
         html body #contact form .info {
           display: flex; }
           @media (max-width: 960px) {
@@ -429,9 +441,11 @@ html {
                 html body #contact form .info .field input {
                   font-size: 1.25rem; } }
         html body #contact form textarea {
+          padding: 0;
           width: 100%;
           background: none;
           border: none;
+          font-weight: 200;
           font-size: 1.5rem;
           color: #404040;
           font-weight: 300;
@@ -489,7 +503,7 @@ html {
       margin: 1rem 0; }
     html body .button, html body input[type="submit"] {
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 1.0625rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       font-family: "Source Sans Pro", sans-serif;
@@ -529,7 +543,7 @@ html {
     line-height: 64px;
     text-transform: lowercase;
     letter-spacing: 0.18rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: inline; }
     @media (max-width: 540px) {
       .barMenu a h1 {
@@ -563,7 +577,7 @@ html {
     width: 100%;
     display: block;
     text-align: center;
-    top: 48px;
+    top: 64px;
     background: rgba(229, 229, 229, 0.9);
     left: 0;
     padding-top: 12px;

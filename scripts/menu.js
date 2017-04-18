@@ -2,7 +2,7 @@
 // 1. setLinkScrolling() - adds smooth scrolling to menu elements
 // 2. checkScroll(scrollPoint) - If scroll has passed scrollPoint, collapse menu to top bar.
 
-var solidBarY = 96;
+var solidBarY = 112;
 
 var menuFunc = {
 	NORM: 0,
