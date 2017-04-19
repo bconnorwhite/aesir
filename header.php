@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="html">
+<html id="html" class="<?php echo get_theme_mod( 'theme_color', 'tyr' ); ?>">
     <head>
         <?php if(is_front_page()){ ?>
         	<title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>

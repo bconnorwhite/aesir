@@ -64,3 +64,39 @@ function add_post_tags($posttags){
 		}
 	}
 }
+
+/* Customizer------------*/
+function aesir_options( $wp_customize ) {
+	$wp_customize->add_section(
+		'theme_colors',
+		array(
+			'title'       => __( 'Theme Color', 'aesir' ),
+			'priority'    => 100,
+			'capability'  => 'edit_theme_options',
+			'description' => __('Change theme colors here.', 'aesir'),
+		)
+	);
+	$wp_customize->add_setting( 'theme_color',
+		array(
+			'default' => 'Tyr'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'theme_color_control',
+		array(
+			'label'    => __( 'Theme Color', 'aesir' ),
+			'section'  => 'theme_colors',
+			'settings' => 'theme_color',
+			'priority' => 10,
+			'type' 		 => 'select',
+			'choices'  => array(
+					'tyr'  		=> __( 'Tyr' ),
+					'njordr' 		=> __( 'Njörðr' ),
+					'freyja'	=> __( 'Freyja' )
+			),
+			'default'  => 'Tyr'
+		)
+	));
+}
+add_action( 'customize_register' , 'aesir_options' );
