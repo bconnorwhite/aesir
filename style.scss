@@ -10,7 +10,8 @@ Author: Connor White
 
 //Fonts
 $sans-font:'Source Sans Pro', sans-serif;
-$serif-font:'Source Serif Pro', serif;
+$serif-font:'Source Sans Serif', serif;
+
 @mixin serifFont(){
 	font-family: $serif-font;
 	letter-spacing: 0.01em;
@@ -99,7 +100,7 @@ html {
   padding: 0;
   font-family: $sans-font;
   font-weight: 300;
-  font-size: 1rem;
+  font-size: 16px;
   overflow-x: hidden;
   @media(max-width: 980px){
     font-size: 0.9375rem;
@@ -113,9 +114,55 @@ html {
   background-color: $white;
   color: $dark;
 
-	.home {
-		header, #main {
-			opacity: 1;
+	a {
+		color: $dark;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: $med;
+			transition: 0.25s ease;
+		}
+	}
+
+	h2 {
+		margin: 1rem 0;
+	}
+
+	.button, input[type="submit"] {
+		font-weight: 400;
+		font-size: 1.0625rem;
+		letter-spacing: 0.18em;
+		text-transform: uppercase;
+		font-family: $sans-font;
+		text-decoration: none !important;
+		border: 1px solid $dark;
+		padding: 13px 40px;
+		border-radius: 25px;
+		transition: 0.25s ease;
+		background-color: transparent;
+		cursor: pointer;
+		-webkit-appearance:none;
+
+		&:hover, &:focus, &:active {
+			background-color: $dark;
+			color: $light;
+			padding: 13px 50px;
+		}
+		&:focus {
+			transition: 0.5s ease;
+		}
+	}
+
+	.wrap {
+		margin: 0 15%;
+		@media(max-width: 1080px){
+			margin: 0 10%;
+		}
+		@media(max-width: 720px){
+			margin: 0 7.5%;
+		}
+		@media(max-width: 320px){
+			margin: 0 5%;
 		}
 	}
 
@@ -126,14 +173,14 @@ html {
 
     header {
       position: fixed;
+			width: 100%;
+			top: 0px;
+			z-index: 10;
+			transition: 0.25s ease;
       padding: 2.5rem 0;
       @media(max-width: 540px){
         padding: 1.5rem 0;
       }
-      width: 100%;
-      top: 0px;
-			z-index: 10;
-			transition: 0.25s ease;
 
 			a h1 {
 				display: none;
@@ -147,11 +194,11 @@ html {
           letter-spacing: 0.18em;
           font-size: 1.0625rem;
 					line-height: 2rem;
+					text-transform: lowercase;
 					@media(max-width: 540px){
 						font-size: 1.25rem;
 						line-height: 2.6rem;
 					}
-          text-transform: lowercase;
 
           a {
             color: $light;
@@ -167,42 +214,18 @@ html {
 				fill: $light;
 				cursor: pointer;
 			}
-    }
-
-		.openMenu {
-			#hamburger {
-				display: block !important;
+			.openMenu {
+				#hamburger {
+					display: block !important;
+				}
 			}
-		}
+    }
 
 		#main {
 			margin-top: $topBarH;
 		}
 		.front {
 			margin-top: 0 !important;
-		}
-		.four-o-four {
-			text-align: center;
-			h2 {
-				color: $dark;
-				font-size: 9rem;
-				font-weight: 400;
-				margin: 120px 0 30px;
-				@media(max-width: 540px){
-					margin: 110px 0 30px;
-				}
-			}
-			h3 {
-				color: $dark;
-				font-size: 2rem;
-			}
-			.button-div {
-				margin: 110px 0;
-				@media(max-width: 540px){
-					margin: 90px 0;
-				}
-			}
-
 		}
 
     #top {
@@ -281,7 +304,7 @@ html {
 
         h1 {
           font-weight: 300;
-          font-size: 3rem;
+          font-size: 2.75rem;
           text-transform: lowercase;
           margin: 10px 0;
           letter-spacing: 0.18rem;
@@ -303,23 +326,80 @@ html {
     }
 
     #about{
-      @include serifFont();
       font-size: 2.25rem;
       line-height: 3.5rem;
-      padding: 5rem 130px;
+			text-align: center;
+			background-color: $white;
+			padding: 5rem 130px;
       @media(max-width: 1300px){
         padding: 5rem 0;
       }
-      text-align: center;
-      background-color: $white;
 
       p {
-				letter-spacing: 0.01em;
+				@include serifFont();
         margin-bottom: 2.75rem;
       }
     }
 
-		.front #portfolio a {
+    .portfolio {
+      .case-study {
+        width: 100%;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        padding-bottom: 28.75%;
+        position: relative;
+        @media(max-width: 1020px){
+          width: 150%;
+          padding-bottom: 42.5%;
+          margin-left: -25%;
+          margin-right: -25%;
+        }
+
+        h2 {
+          text-transform: uppercase;
+          text-align: center;
+          font-size: 2.5rem;
+          padding: 1em;
+          font-weight: 300;
+          letter-spacing: 0.135em;
+          margin: 0;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 50%;
+					transition: 0.25s ease;
+					background-color: $light;
+					line-height: 1.4em;
+          @media(max-width: 1020px){
+            width: 40%;
+          }
+          @media(max-width: 980px){
+            font-size: 2rem;
+          }
+          @media(max-width: 800px){
+            font-size: 1.75rem;
+          }
+          @media(max-width: 720px){
+            font-size: 1.5rem;
+          }
+          @media(max-width: 600px){
+            font-size: 1.25rem;
+          }
+          @media(max-width: 500px){
+            font-size: 1rem;
+          }
+          @media(max-width: 414px){
+            padding: 1.25em 1em;
+            width: 50%;
+          }
+					strong {
+						font-weight: 300;
+					}
+        }
+      }
+    }
+		.front .portfolio a {
 			&:hover, &:focus {
 				.shade {
 					background-color: $shade;
@@ -345,75 +425,16 @@ html {
 			}
 		}
 
-    #portfolio {
-      .case-study {
-        width: 100%;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        padding-bottom: 28.75%;
-        position: relative;
-        @media(max-width: 1020px){
-          width: 150%;
-          padding-bottom: 42.5%;
-          margin-left: -25%;
-          margin-right: -25%;
-        }
-
-        h2 {
-          text-transform: uppercase;
-          text-align: center;
-          font-size: 2.5rem;
-          padding: 1em;
-          font-weight: 300;
-          letter-spacing: 0.18rem;
-          margin: 0;
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 50%;
-          @media(max-width: 1020px){
-            width: 40%;
-          }
-          @media(max-width: 980px){
-            font-size: 2rem;
-          }
-          @media(max-width: 800px){
-            font-size: 1.75rem;
-          }
-          @media(max-width: 720px){
-            font-size: 1.5rem;
-          }
-          @media(max-width: 600px){
-            font-size: 1.25rem;
-          }
-          @media(max-width: 500px){
-            font-size: 1rem;
-          }
-          @media(max-width: 414px){
-            padding: 1.25em 1em;
-            width: 50%;
-          }
-          transition: 0.25s ease;
-          background-color: $light;
-					line-height: 1.4em;
-					strong {
-						font-weight: 300;
-					}
-        }
-      }
-    }
-
 		.content {
+			@include serifFont();
 			background-color: $white;
 			padding: 60px 15px;
-			@media(max-width: 540px){
-				padding: 40px 15px;
-			}
-			@include serifFont();
 			font-size: 1.0625rem;
 			color: $slight;
 			line-height: 1.5em;
+			@media(max-width: 540px){
+				padding: 40px 15px;
+			}
 
 			.info {
 				display: flex;
@@ -474,11 +495,11 @@ html {
 
     #contact {
       text-align: center;
+			background-color: $light;
       padding: 5rem 5rem 7rem 5rem;
 			@media(max-width: $contact-bp){
 				padding: 4rem 3rem 5rem 3rem;
 			}
-      background-color: $light;
 
       h2 {
         @include serifFont();
@@ -504,15 +525,15 @@ html {
 				}
 			}
 			form {
-				p {
-					font-size: 1.5rem;
-				}
 				text-align: left;
 				width: 44rem;
 				max-width: 100%;
 				margin: 0 auto;
 				color: $med;
 				transition: 1s ease;
+				p {
+					font-size: 1.5rem;
+				}
 				.info {
 					display: flex;
 					@media(max-width: $contact-bp){
@@ -619,6 +640,30 @@ html {
 			background-color: $white;
 		}
 
+		.four-o-four {
+			text-align: center;
+			h2 {
+				color: $dark;
+				font-size: 9rem;
+				font-weight: 400;
+				margin: 120px 0 30px;
+				@media(max-width: 540px){
+					margin: 110px 0 30px;
+				}
+			}
+			h3 {
+				color: $dark;
+				font-size: 2rem;
+			}
+			.button-div {
+				margin: 110px 0;
+				@media(max-width: 540px){
+					margin: 90px 0;
+				}
+			}
+
+		}
+
     footer {
       background-color: $dark;
       text-align: center;
@@ -628,58 +673,6 @@ html {
         i {
           padding: 16px 8px;
         }
-      }
-    }
-
-    a {
-      color: $dark;
-      text-decoration: none;
-
-      &:hover, &:focus {
-        color: $med;
-        transition: 0.25s ease;
-      }
-    }
-
-    h2 {
-      margin: 1rem 0;
-    }
-
-    .button, input[type="submit"] {
-      font-weight: 400;
-      font-size: 1.0625rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      font-family: $sans-font;
-      text-decoration: none !important;
-      border: 1px solid $dark;
-      padding: 13px 40px;
-      border-radius: 25px;
-      transition: 0.25s ease;
-			background-color: transparent;
-			cursor: pointer;
-			-webkit-appearance:none;
-
-      &:hover, &:focus, &:active {
-        background-color: $dark;
-        color: $light;
-        padding: 13px 50px;
-      }
-			&:focus {
-				transition: 0.5s ease;
-			}
-    }
-
-    .wrap {
-      margin: 0 15%;
-      @media(max-width: 1080px){
-        margin: 0 10%;
-      }
-      @media(max-width: 720px){
-        margin: 0 7.5%;
-      }
-      @media(max-width: 320px){
-        margin: 0 5%;
       }
     }
   }

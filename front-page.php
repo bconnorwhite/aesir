@@ -14,7 +14,7 @@
 			<a class='button' href="mailto:connor@connorwhite.org">Let's Chat</a>
 		</div>
 	</div>
-	<div id='portfolio'>
+	<div id='portfolio' class="portfolio">
 		<?php
 			$sticky_posts = get_option( 'sticky_posts' );
 			foreach ($sticky_posts as $post) : setup_postdata($post); ?>

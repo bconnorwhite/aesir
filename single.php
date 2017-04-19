@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="main" class="post">
-	<div id="portfolio">
+	<div class="portfolio">
 		<?php include 'case-study.php'; ?>
 	</div>
 	<div class="content">
