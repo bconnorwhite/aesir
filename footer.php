@@ -27,6 +27,13 @@
 				</div>
 				<script async src="https://use.fontawesome.com/1b52717aea.js"></script>
 				<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/menu.js"></script>
+				<noscript>
+					<style>
+						header, #main {
+							opacity: 1;
+						}
+					</style>
+				</noscript>
 				<?php wp_footer(); ?>
 			</footer>
 	</body>
