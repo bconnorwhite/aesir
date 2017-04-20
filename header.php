@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html id="html" class="<?php echo get_theme_mod( 'theme_color', 'tyr' ); ?>">
+<html id="html" class="<?php echo get_theme_mod( 'theme_color', 'hodr' ); ?>">
     <head>
         <?php if(is_front_page()){ ?>
         	<title><?php bloginfo('name'); ?> | <?php bloginfo('description'); ?></title>
         <?php } else { ?>
         	<title><?php wp_title(); ?> | <?php bloginfo('name'); ?></title>
         <?php } ?>
-        <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/favicon.ico" />
+        <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/<?php echo get_theme_mod('theme_color', 'hodr'); ?>_favicon.ico" />
         <meta description="A showcase of the work of Connor White, a web developer specializing in Wordpress." />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="robots" content="index,follow">

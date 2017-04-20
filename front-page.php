@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div id='main' class="front">
 	<div id='top'>
+		<div class="shade"></div>
 		<div class='wrap'>
 			<div id='title'>
 				<h1>Connor <strong>White</strong></h1>
