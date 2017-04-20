@@ -78,7 +78,7 @@ function aesir_options( $wp_customize ) {
 	);
 	$wp_customize->add_setting( 'theme_color',
 		array(
-			'default' => 'Tyr'
+			'default' => 'hodr'
 		)
 	);
 	$wp_customize->add_control( new WP_Customize_Control(
@@ -91,11 +91,12 @@ function aesir_options( $wp_customize ) {
 			'priority' => 10,
 			'type' 		 => 'select',
 			'choices'  => array(
-					'tyr'  		=> __( 'Tyr' ),
-					'njordr' 		=> __( 'Njörðr' ),
-					'freyja'	=> __( 'Freyja' )
+					'hodr'		=> __( 'Höðr' ),
+					'njordr' 	=> __( 'Njörðr' ),
+					'freyja'	=> __( 'Freyja' ),
+					'tyr'  		=> __( 'Tyr' )
 			),
-			'default'  => 'Tyr'
+			'default'  => 'hodr'
 		)
 	));
 }
