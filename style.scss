@@ -666,15 +666,57 @@ html {
 		}
 
     footer {
-      background-color: $dark;
+      background-color: $medLight;
       text-align: center;
       line-height: 64px;
+			padding-top: 40px;
+			@media(max-width: 520px){
+				padding-top: 25px;
+			}
+			color: $white;
+			h2 {
+		    font-size: 2.5rem;
+		    text-transform: lowercase;
+		    font-weight: 200;
+		    letter-spacing: 0.09em;
+			}
+			hr {
+				width: 7.5rem;
+				border: none;
+				border-bottom: 1px solid rgba(256,256,256,0.5);
+				margin: 20px auto;
+				@media(max-width: 520px){
+					margin: 10px auto 30px;
+				}
+			}
+			li {
+				display: inline;
+				@media(max-width: 520px){
+					display: list-item;
+					margin: -24px 0;
+				}
+			}
       a {
-        color: $light;
+				padding: 0 10px;
+				font-size: 1.0625rem;
+        color: $white;
+				&:hover {
+					color: $dark;
+				}
         i {
           padding: 16px 8px;
         }
       }
+			.copyright {
+				margin-top: 40px;
+				text-align: center;
+				color: $white;
+				background-color: $dark;
+				padding: 20px 0;
+				@media(max-width: 520px){
+					padding: 5px 0;
+				}
+			}
     }
   }
 }
