@@ -117,12 +117,34 @@ function getBgUrl(el) {
     return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
 }
 
+function preloadImages(top){
+	var url = getBgUrl(top);
+	var s = url.split("/img/");
+	var path = s[0] + "/img/";
+	var themeColor = s[1].split("_")[0];
+
+	bg_540 = new Image();
+	bg_540.src = path + themeColor + "_540.jpg";
+	bg_720 = new Image();
+	bg_720.src = path + themeColor + "_720.jpg";
+	bg_1080 = new Image();
+	bg_1080.src = path + themeColor + "_1080.jpg";
+	bg_1440 = new Image();
+	bg_1440.src = path + themeColor + "_1440.jpg";
+	bg_1600 = new Image();
+	bg_1600.src = path + themeColor + "_1600.jpg";
+	bg_1920 = new Image();
+	bg_1920.src = path + themeColor + "_1920.jpg";
+	bg_full = new Image();
+}
+
 function fadeInTop(){
 	var top = document.getElementById('top');
 	if(top !== null){
 		window.onload = function () {
 			 document.getElementById('main').style.opacity = 1;
 			 document.getElementById('header').style.opacity = 1;
+			 preloadImages(top);
 		};
 	}
 }
