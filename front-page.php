@@ -8,12 +8,7 @@
 			</div>
 		</div>
 	</div>
-	<div id='about'>
-		<div class='wrap'>
-			<p>As a <strong>web developer</strong>, I use technology to bring <strong>vision to reality.</strong> Have a challenge that needs solving?</p>
-			<a class='button' href="mailto:connor@connorwhite.org">Let's Chat</a>
-		</div>
-	</div>
+	<?php dynamic_sidebar( 'about' ); ?>
 	<div id='portfolio' class="portfolio">
 		<?php
 			$sticky_posts = get_option( 'sticky_posts' );

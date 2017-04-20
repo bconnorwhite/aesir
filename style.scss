@@ -4,11 +4,6 @@ Author: Connor White
 Version: the latest one that I've pushed
 */
 
-// Contents:
-// 0.) CSS Reset
-// 1.) Objects
-// 2.) Structure
-
 //Fonts
 $sans-font:'Source Sans Pro', sans-serif;
 $serif-font:'Source Sans Serif', serif;
@@ -32,6 +27,11 @@ $clearLight: rgba(229,229,229,0.9);
 //Measurements
 $topBarH: 64px;
 $contact-bp: 960px;
+
+//Aspect Ratios
+$two: 50%;
+$sixteen-nine: 56.25%;
+$sixteen-ten: 62.5%;
 
 //URLs
 $imgPath: '/wp-content/themes/aesir/img/';
@@ -91,8 +91,60 @@ table {
 }
 
 //------------------
-// 1.) Objects
+// Colors
 //------------------
+
+.hodr {
+	#top {
+		background: url($imgPath + 'hodr_full.jpg');
+		padding-top: $two;
+		@media(max-width: 1920px){
+			background: url($imgPath + 'hodr_1920.jpg');
+		}
+		@media(max-width: 1440px){
+			background: url($imgPath + 'hodr_1440.jpg');
+			padding-top: $sixteen-nine;
+		}
+		@media(max-width: 1080px){
+			background: url($imgPath + 'header_1080.jpg');
+			padding-top: 66.7%;
+		}
+		@media(max-width: 720px){
+			background: url($imgPath + 'header_720.jpg');
+			padding-top: 90%;
+		}
+		@media(max-width: 540px){
+			background: url($imgPath + 'header_540.jpg');
+			padding-top: 125%;
+		}
+	}
+}
+
+.freyja {
+	#top {
+		background: url($imgPath + 'freyja_full.jpg');
+		padding-top: $two;
+		@media(max-width: 1920px){
+			background: url($imgPath + 'freyja_1920.jpg');
+		}
+		@media(max-width: 1440px){
+			background: url($imgPath + 'freyja_1440.jpg');
+			padding-top: $sixteen-nine;
+		}
+		@media(max-width: 1080px){
+			background: url($imgPath + 'header_1080.jpg');
+			padding-top: 66.7%;
+		}
+		@media(max-width: 720px){
+			background: url($imgPath + 'header_720.jpg');
+			padding-top: 90%;
+		}
+		@media(max-width: 540px){
+			background: url($imgPath + 'header_540.jpg');
+			padding-top: 125%;
+		}
+	}
+}
 
 html {
   min-height: 100%;
@@ -230,30 +282,6 @@ html {
 		}
 
     #top {
-      background: url($imgPath + 'header_full.jpg');
-      padding-top: 56.25%;
-      @media(max-width: 1920px){
-        background: url($imgPath + 'header_1920.jpg');
-      }
-      @media(max-width: 1600px){
-        background: url($imgPath + 'header_1600.jpg');
-      }
-      @media(max-width: 1440px){
-        background: url($imgPath + 'header_1440.jpg');
-        padding-top: 62.5%;
-      }
-      @media(max-width: 1080px){
-        background: url($imgPath + 'header_1080.jpg');
-        padding-top: 66.7%;
-      }
-      @media(max-width: 720px){
-        background: url($imgPath + 'header_720_wide.jpg');
-        padding-top: 90%;
-      }
-      @media(max-width: 540px){
-        background: url($imgPath + 'header_540.jpg');
-        padding-top: 125%;
-      }
       background-size: contain !important;
       background-repeat: no-repeat !important;
       height: 0;

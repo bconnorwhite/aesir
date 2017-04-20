@@ -51,6 +51,52 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.hodr #top {
+  background: url("/wp-content/themes/aesir/img/hodr_full.jpg");
+  padding-top: 50%; }
+  @media (max-width: 1920px) {
+    .hodr #top {
+      background: url("/wp-content/themes/aesir/img/hodr_1920.jpg"); } }
+  @media (max-width: 1440px) {
+    .hodr #top {
+      background: url("/wp-content/themes/aesir/img/hodr_1440.jpg");
+      padding-top: 56.25%; } }
+  @media (max-width: 1080px) {
+    .hodr #top {
+      background: url("/wp-content/themes/aesir/img/header_1080.jpg");
+      padding-top: 66.7%; } }
+  @media (max-width: 720px) {
+    .hodr #top {
+      background: url("/wp-content/themes/aesir/img/header_720.jpg");
+      padding-top: 90%; } }
+  @media (max-width: 540px) {
+    .hodr #top {
+      background: url("/wp-content/themes/aesir/img/header_540.jpg");
+      padding-top: 125%; } }
+
+.freyja #top {
+  background: url("/wp-content/themes/aesir/img/freyja_full.jpg");
+  padding-top: 50%; }
+  @media (max-width: 1920px) {
+    .freyja #top {
+      background: url("/wp-content/themes/aesir/img/freyja_1920.jpg"); } }
+  @media (max-width: 1440px) {
+    .freyja #top {
+      background: url("/wp-content/themes/aesir/img/freyja_1440.jpg");
+      padding-top: 56.25%; } }
+  @media (max-width: 1080px) {
+    .freyja #top {
+      background: url("/wp-content/themes/aesir/img/header_1080.jpg");
+      padding-top: 66.7%; } }
+  @media (max-width: 720px) {
+    .freyja #top {
+      background: url("/wp-content/themes/aesir/img/header_720.jpg");
+      padding-top: 90%; } }
+  @media (max-width: 540px) {
+    .freyja #top {
+      background: url("/wp-content/themes/aesir/img/header_540.jpg");
+      padding-top: 125%; } }
+
 html {
   min-height: 100%;
   height: 800px;
@@ -156,36 +202,12 @@ html {
     html body .front {
       margin-top: 0 !important; }
     html body #top {
-      background: url("/wp-content/themes/aesir/img/header_full.jpg");
-      padding-top: 56.25%;
       background-size: contain !important;
       background-repeat: no-repeat !important;
       height: 0;
       width: 100%;
       z-index: -1;
       color: #e5e5e5; }
-      @media (max-width: 1920px) {
-        html body #top {
-          background: url("/wp-content/themes/aesir/img/header_1920.jpg"); } }
-      @media (max-width: 1600px) {
-        html body #top {
-          background: url("/wp-content/themes/aesir/img/header_1600.jpg"); } }
-      @media (max-width: 1440px) {
-        html body #top {
-          background: url("/wp-content/themes/aesir/img/header_1440.jpg");
-          padding-top: 62.5%; } }
-      @media (max-width: 1080px) {
-        html body #top {
-          background: url("/wp-content/themes/aesir/img/header_1080.jpg");
-          padding-top: 66.7%; } }
-      @media (max-width: 720px) {
-        html body #top {
-          background: url("/wp-content/themes/aesir/img/header_720_wide.jpg");
-          padding-top: 90%; } }
-      @media (max-width: 540px) {
-        html body #top {
-          background: url("/wp-content/themes/aesir/img/header_540.jpg");
-          padding-top: 125%; } }
       @media (max-width: 540px) {
         html body #top {
           color: #fff; } }

@@ -101,3 +101,51 @@ function aesir_options( $wp_customize ) {
 	));
 }
 add_action( 'customize_register' , 'aesir_options' );
+
+/* Register Sidebars-------- */
+function aesir_widgets_init() {
+	register_sidebar( array(
+		'name'          => 'About',
+		'id'            => 'about',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+	) );
+}
+add_action( 'widgets_init', 'aesir_widgets_init' );
+
+/*Custom Widgets-------- */
+class about_widget extends WP_Widget {
+	public function __construct() {
+		$widget_options = array(
+			'classname' => 'about_widget',
+			'description' => 'About Widget',
+		);
+		parent::__construct( 'about_widget', 'About Widget', $widget_options);
+	}
+	public function widget($args, $instance){
+		$text = apply_filters('widget_text', $instance['text']);?>
+		<div id="about">
+			<div class="wrap">
+				<p><?php echo $text ?></p>
+				<a class='button' href="mailto:connor@connorwhite.org">Let's Chat</a>
+			</div>
+		</div>
+	<?php }
+	public function form($instance){
+		$text = !empty($instance['text']) ? $instance['text'] : ''; ?>
+		<p>
+    	<label for="<?php echo $this->get_field_id('text'); ?>">Text:</label><br />
+    	<textarea rows="3" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea><br />
+		</p>
+	<?php }
+	public function update($new_instance, $old_instance){
+		$instance = $old_instance;
+		$instance['text'] = $new_instance['text'];
+		return $instance;
+	}
+}
+
+function register_widgets() {
+	register_widget('about_widget');
+}
+add_action('widgets_init', 'register_widgets');
