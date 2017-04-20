@@ -125,9 +125,11 @@ class about_widget extends WP_Widget {
 	public function widget($args, $instance){
 		$text = apply_filters('widget_text', $instance['text']);?>
 		<div id="about">
-			<div class="wrap">
-				<p><?php echo $text ?></p>
-				<a class='button' href="mailto:connor@connorwhite.org">Let's Chat</a>
+			<div id="slash">
+				<div class="wrap">
+					<p><?php echo $text ?></p>
+					<a class='button' href="mailto:connor@connorwhite.org">Let's Chat</a>
+				</div>
 			</div>
 		</div>
 	<?php }
