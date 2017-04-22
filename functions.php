@@ -14,23 +14,23 @@ if (function_exists('add_theme_support')) {
 }
 
 /* Register Styles and Scripts-------- */
-function register_resources(){
+function register_styles(){
 	//style.css
-	wp_register_style('style', get_stylesheet_uri());
+	//wp_register_style('style', get_stylesheet_uri());
 	//Google Fonts
 	$query_args = array(
 		'family' => 'Source+Sans+Pro:200,300,300i,400,600,700|Source+Sans+Serif:400,600',
 		'subset' => 'latin,latin-ext');
 	wp_register_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
 }
-add_action( 'get_footer', 'register_resources' );
+add_action( 'wp_enqueue_style', 'register_styles' );
 
 /* Enque Styles and Scripts-------- */
 function enqueue(){
-	wp_enqueue_style('style');
+	//wp_enqueue_style('style');
 	wp_enqueue_style('google_fonts');
 }
-add_action( 'get_footer', 'enqueue' );
+add_action( 'wp_enqueue_style', 'enqueue' );
 
 /* Custom Login Screen-------- */
 function my_login_stylesheet() {

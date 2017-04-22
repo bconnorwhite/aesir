@@ -13,9 +13,15 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
         <meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/connor_white.jpg" />
         <meta property="og:description" content="As a web developer, I use technology to bring vision to reality. Have a challenge that needs solving?" />
+        <!--[if IE]>
+          <link rel="stylesheet" href="style.css"/>
+        <![endif]-->
         <?php wp_head(); ?>
     </head>
     <body <?php if(is_front_page()){ ?>class="home"<?php } ?>>
+      <!--[if !IE]> -->
+        <link rel="stylesheet" href="<?php get_stylesheet_directory_uri() ?>/style.css" lazyload="1"/>
+      <!-- <![endif]-->
       <header id="header" <?php if(!is_front_page()){?>class="barMenu"<?php } ?>>
         <div class="wrap">
           <a id="top-bar-name" href="/#top"><h1>Connor <strong>White</strong></h1></a>
