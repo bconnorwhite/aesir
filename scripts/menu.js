@@ -124,18 +124,32 @@ function preloadImages(top){
 	var themeColor = s[1].split("_")[0];
 
 	bg_540 = new Image();
-	bg_540.src = path + themeColor + "_540.jpg";
 	bg_720 = new Image();
-	bg_720.src = path + themeColor + "_720.jpg";
 	bg_1080 = new Image();
-	bg_1080.src = path + themeColor + "_1080.jpg";
 	bg_1440 = new Image();
-	bg_1440.src = path + themeColor + "_1440.jpg";
 	bg_1600 = new Image();
-	bg_1600.src = path + themeColor + "_1600.jpg";
 	bg_1920 = new Image();
-	bg_1920.src = path + themeColor + "_1920.jpg";
 	bg_full = new Image();
+	var width = window.screen.width;
+	bg_540.src = path + themeColor + "_540.jpg";
+	if(width >= 540){//Only preload images as wide as needed
+		bg_720.src = path + themeColor + "_720.jpg";
+	}
+	if(width >= 720){
+		bg_1080.src = path + themeColor + "_1080.jpg";
+	}
+	if(width >= 1080){
+		bg_1440.src = path + themeColor + "_1440.jpg";
+	}
+	if(width >= 1440){
+		bg_1600.src = path + themeColor + "_1600.jpg";
+	}
+	if(width >= 1600){
+		bg_1920.src = path + themeColor + "_1920.jpg";
+	}
+	if(width >= 1920){
+		bg_full.src = path + themeColor + "_full.jpg";
+	}
 }
 
 function fadeInTop(){
