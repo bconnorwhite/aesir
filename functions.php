@@ -12,6 +12,7 @@ add_action('init', 'register_menus');
 if (function_exists('add_theme_support')) {
 	add_theme_support('post-thumbnails', array('post'));
 }
+set_post_thumbnail_size(1600, 460);
 
 /* Register Styles and Scripts--------
 function register_styles(){

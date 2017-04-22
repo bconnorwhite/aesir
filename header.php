@@ -15,14 +15,14 @@
         <meta property="og:description" content="As a web developer, I use technology to bring vision to reality. Have a challenge that needs solving?" />
         <!--[if IE]>
           <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css"/>
-          <link rel='stylesheet' id='google_fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600,700|Source+Sans+Serif:400,600&#038;subset=latin,latin-ext' type='text/css' media='all' />
+          <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Sans+Serif:400,600&#038;subset=latin' type='text/css' media='all' />
         <![endif]-->
         <?php wp_head(); ?>
     </head>
     <body <?php if(is_front_page()){ ?>class="home"<?php } ?>>
       <!--[if !IE]> -->
-        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" lazyload="1"/>
-        <link rel='stylesheet' id='google_fonts-css'  href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600,700|Source+Sans+Serif:400,600&#038;subset=latin,latin-ext' type='text/css' media='all' />
+        <link rel='stylesheet' href="<?php bloginfo('template_url'); ?>/style.css" lazyload="1"/>
+        <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Sans+Serif:400,600&#038;subset=latin' type='text/css' media='all' />
       <!-- <![endif]-->
       <header id="header" <?php if(!is_front_page()){?>class="barMenu"<?php } ?>>
         <div class="wrap">
