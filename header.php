@@ -14,13 +14,13 @@
         <meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/connor_white.jpg" />
         <meta property="og:description" content="As a web developer, I use technology to bring vision to reality. Have a challenge that needs solving?" />
         <!--[if IE]>
-          <link rel="stylesheet" href="style.css"/>
+          <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css"/>
         <![endif]-->
         <?php wp_head(); ?>
     </head>
     <body <?php if(is_front_page()){ ?>class="home"<?php } ?>>
       <!--[if !IE]> -->
-        <link rel="stylesheet" href="<?php get_stylesheet_directory_uri() ?>/style.css" lazyload="1"/>
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css" lazyload="1"/>
       <!-- <![endif]-->
       <header id="header" <?php if(!is_front_page()){?>class="barMenu"<?php } ?>>
         <div class="wrap">
