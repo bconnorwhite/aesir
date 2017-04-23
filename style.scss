@@ -300,7 +300,7 @@ html {
 			width: 100%;
 			top: 0px;
 			z-index: 10;
-			transition: 0.25s ease;
+			transition: opacity 0.25s ease;
       padding: 2.5rem 0;
       @media(max-width: 540px){
         padding: 1.5rem 0;
@@ -348,7 +348,7 @@ html {
 		#main {
 			padding-top: $topBarH;
 			opacity: 0;
-			transition: 0.25s ease;
+			transition: opacity 0.25s ease;
 		}
 		.front {
 			padding-top: 0 !important;

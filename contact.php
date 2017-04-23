@@ -21,4 +21,3 @@
 		</form>
 	</div>
 </div>
-<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/contact.js"></script>

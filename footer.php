@@ -26,14 +26,7 @@
 					Copyright © <?php echo date("Y"); ?> - All rights reserved.
 				</div>
 				<script async src="https://use.fontawesome.com/1b52717aea.js"></script>
-				<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/menu.js"></script>
-				<noscript>
-					<style>
-						header, #main {
-							opacity: 1;
-						}
-					</style>
-				</noscript>
+				<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/scripts/min.js"></script>
 				<?php wp_footer(); ?>
 			</footer>
 	</body>
