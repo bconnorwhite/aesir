@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div id="main" class="post">
 	<div class="portfolio">
-		<?php include 'case-study.php'; ?>
+		<?php include 'inc/case-study.php'; ?>
 	</div>
 	<div class="content">
 		<div class="wrap">
@@ -27,6 +27,6 @@
 				</div>
 		</div>
 	</div>
-	<?php include 'contact.php'; ?>
+	<?php include 'inc/contact.php'; ?>
 </div>
 <?php get_footer(); ?>

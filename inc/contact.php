@@ -16,7 +16,7 @@
 			</div>
 			<textarea name="message" name="message" placeholder="Message:" rows="5" required></textarea>
 			<div class="send">
-				<input name="submit" type="submit" name="submit" value="Send" onclick='sendEmail("<?php echo(bloginfo('template_url')) .'/mail.php'; ?>")' />
+				<input name="submit" type="submit" name="submit" value="Send" onclick='sendEmail("<?php echo(bloginfo('template_url')) .'/inc/mail.php'; ?>")' />
 			</div>
 		</form>
 	</div>

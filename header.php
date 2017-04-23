@@ -14,7 +14,7 @@
         <meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/connor_white.jpg" />
         <meta property="og:description" content="As a web developer, I use technology to bring vision to reality. Have a challenge that needs solving?" />
         <!--[if IE]>
-          <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css"/>
+          <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css"/>
           <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Serif+Pro:400,600" rel="stylesheet">
         <![endif]-->
         <noscript>
@@ -28,7 +28,7 @@
     </head>
     <body id="body" <?php if(is_front_page()){ ?>class="home"<?php } ?>>
       <!--[if !IE]> -->
-        <link rel='stylesheet' href="<?php bloginfo('template_url'); ?>/style.css" lazyload="1"/>
+        <link rel='stylesheet' href="<?php bloginfo('template_url'); ?>/css/style.css" lazyload="1"/>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Serif+Pro:400,600" rel="stylesheet">
       <!-- <![endif]-->
       <header id="header" <?php if(!is_front_page()){?>class="barMenu"<?php } ?>>

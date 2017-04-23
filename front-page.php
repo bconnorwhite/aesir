@@ -15,11 +15,11 @@
 			$sticky_posts = get_option( 'sticky_posts' );
 			foreach ($sticky_posts as $post) : setup_postdata($post); ?>
 				<a href="<?php the_permalink(); ?>">
-					<?php include 'case-study.php'; ?>
+					<?php include 'inc/case-study.php'; ?>
 				</a>
 			<?php endforeach;
 		?>
 	</div>
-	<?php include 'contact.php'; ?>
+	<?php include 'inc/contact.php'; ?>
 </div>
 <?php get_footer(); ?>

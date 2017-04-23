@@ -9,6 +9,6 @@
 			</div>
 		</div>
 	</div>
-	<?php include "contact.php" ?>
+	<?php include "/inc/contact.php" ?>
 </div>
 <?php get_footer(); ?>
