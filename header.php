@@ -13,24 +13,12 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0">
         <meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/connor_white.jpg" />
         <meta property="og:description" content="As a web developer, I use technology to bring vision to reality. Have a challenge that needs solving?" />
-        <!--[if IE]>
-          <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css"/>
-          <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Serif+Pro:400,600" rel="stylesheet">
-        <![endif]-->
-        <noscript>
-          <style>
-            header, #main {
-              opacity: 1;
-            }
-          </style>
-        </noscript>
+        <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css"/>
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Serif+Pro:400,600" rel="stylesheet">
+        <noscript><style>body{opacity:1;}</style></noscript>
         <?php wp_head(); ?>
     </head>
     <body id="body" <?php if(is_front_page()){ ?>class="home"<?php } ?>>
-      <!--[if !IE]> -->
-        <link rel='stylesheet' href="<?php bloginfo('template_url'); ?>/css/style.css" lazyload="1"/>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Serif+Pro:400,600" rel="stylesheet">
-      <!-- <![endif]-->
       <header id="header" <?php if(!is_front_page()){?>class="barMenu"<?php } ?>>
         <div class="wrap">
           <a id="top-bar-name" href="/#top"><h1>Connor <strong>White</strong></h1></a>
