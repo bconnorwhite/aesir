@@ -216,7 +216,13 @@ table {
 	}
 }
 
+body {
+	opacity: 0;
+	transition: opacity 1s ease;
+}
+
 html {
+	background-color: $dark;
   min-height: 100%;
   height: 800px;
   margin: 0 !important;
@@ -295,12 +301,10 @@ html {
 		overflow-x: hidden;
 
     header {
-			opacity: 0;
       position: fixed;
 			width: 100%;
 			top: 0px;
 			z-index: 10;
-			transition: opacity 0.25s ease;
       padding: 2.5rem 0;
       @media(max-width: 540px){
         padding: 1.5rem 0;
@@ -347,8 +351,6 @@ html {
 
 		#main {
 			padding-top: $topBarH;
-			opacity: 0;
-			transition: opacity 0.25s ease;
 		}
 		.front {
 			padding-top: 0 !important;

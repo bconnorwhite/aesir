@@ -117,8 +117,8 @@ function getBgUrl(el) {
     return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
 }
 
-function preloadImages(top){
-	var url = getBgUrl(top);
+function preloadImages(){
+	var url = getBgUrl(document.getElementById("top"));
 	var s = url.split("/img/");
 	var path = s[0] + "/img/";
 	var themeColor = s[1].split("_")[0];
@@ -152,19 +152,15 @@ function preloadImages(top){
 	}
 }
 
-function fadeInTop(){
-	var top = document.getElementById('top');
-	if(top !== null){
-		window.onload = function () {
-			 document.getElementById('main').style.opacity = 1;
-			 document.getElementById('header').style.opacity = 1;
-			 preloadImages(top);
-		};
-	}
+function fadeIn(){
+	window.onload = function () {
+		 document.getElementById('body').style.opacity = 1;
+	};
 }
 
 (function(){
-	fadeInTop();
+	fadeIn();
 	menuClose();
 	setLinks();
+	preloadImages();
 })();

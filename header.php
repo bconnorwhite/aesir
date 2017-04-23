@@ -26,7 +26,7 @@
         </noscript>
         <?php wp_head(); ?>
     </head>
-    <body <?php if(is_front_page()){ ?>class="home"<?php } ?>>
+    <body id="body" <?php if(is_front_page()){ ?>class="home"<?php } ?>>
       <!--[if !IE]> -->
         <link rel='stylesheet' href="<?php bloginfo('template_url'); ?>/style.css" lazyload="1"/>
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,300i,400,600|Source+Serif+Pro:400,600" rel="stylesheet">
