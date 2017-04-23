@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-i {
+.fa {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'font-awesome' !important;
   speak: none;
@@ -69,4 +69,3 @@ i {
 .fa-telegram:before {
   content: "\f2c6";
 }
-
