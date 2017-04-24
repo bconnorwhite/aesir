@@ -1,4 +1,4 @@
-// This file manages menu functionality
+// This file manages menu functionality and interaction with title
 // 1. setLinkScrolling() - adds smooth scrolling to menu elements
 // 2. checkScroll(scrollPoint) - If scroll has passed scrollPoint, collapse menu to top bar.
 
