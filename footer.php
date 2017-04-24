@@ -25,7 +25,11 @@
 				<div class="copyright">
 					Copyright © <?php echo date("Y"); ?> - All rights reserved.
 				</div>
-				<noscript><style>body{opacity:1;}</style></noscript>
+				<noscript>
+					<style>
+						body{opacity:1;}
+					</style>
+				</noscript>
 				<?php wp_footer(); ?>
 			</footer>
 	</body>
