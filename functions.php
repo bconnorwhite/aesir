@@ -14,35 +14,37 @@ if (function_exists('add_theme_support')) {
 }
 set_post_thumbnail_size(1600, 460);
 
-/* Register Styles and Scripts--------
-function register_styles(){
-	//style.css
-	wp_register_style('style', get_stylesheet_uri());
+/* Register Styles and Scripts-------- */
+function enqueue_assets(){
+	//Main stylesheet
+	wp_enqueue_style('style', get_template_directory_uri() . "/css/style.css", array(), null);
 	//Google Fonts
 	$query_args = array(
-		'family' => 'Source+Sans+Pro:200,300,300i,400,600,700|Source+Sans+Serif:400,600',
-		'subset' => 'latin,latin-ext');
-	wp_register_style( 'google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+		'family' => 'Source+Sans+Pro:200,300,300i,400,600|Source+Sans+Serif:400,600',
+		'subset' => 'latin');
+	wp_enqueue_style('google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css"), array(), null);
+	//Main JavaScript
+	wp_register_script('min', get_template_directory_uri() . "/js/min.js", array(), null, true);
+	wp_enqueue_script('min');
 }
-add_action( 'wp_enqueue_style', 'register_styles' );*/
+add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
 
-/* Enque Styles and Scripts--------
-function enqueue(){
-	wp_enqueue_style('style');
-	wp_enqueue_style('google_fonts');
-}
-add_action( 'wp_enqueue_style', 'enqueue' );*/
+/* Register Non-Critical Styles in Footer  -------- */
+function enqueue_footer_styles(){
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/font-awesome/style.css', array(), null);
+};
+add_action('get_footer', 'enqueue_footer_styles');
 
 /* Custom Login Screen-------- */
-function my_login_stylesheet() {
-    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/css/style-login.css' );
+function enqueue_login_stylesheet() {
+    wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/css/style-login.css', array(), null);
 }
-add_action( 'login_enqueue_scripts', 'my_login_stylesheet' );
+add_action('login_enqueue_scripts', 'enqueue_login_stylesheet');
 
-function my_login_logo_url() {
+function login_logo_url() {
 	return get_bloginfo( 'url' );
 }
-add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_filter('login_headerurl', 'login_logo_url');
 
 /* List Categories------------*/
 function add_post_cats($postcats){

@@ -25,8 +25,7 @@
 				<div class="copyright">
 					Copyright © <?php echo date("Y"); ?> - All rights reserved.
 				</div>
-				<script async type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/min.js"></script>
-				<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/font-awesome/style.css"/>
+				<noscript><style>body{opacity:1;}</style></noscript>
 				<?php wp_footer(); ?>
 			</footer>
 	</body>
