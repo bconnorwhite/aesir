@@ -27,9 +27,7 @@
 				</div>
 				<noscript>
 					<style>
-						body{
-							opacity: 1;
-						}
+						body{opacity: 1;}
 					</style>
 				</noscript>
 				<?php wp_footer(); ?>
