@@ -73,7 +73,8 @@ function hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 }
 
-function checkScroll(y) {//Display top bar if page has been scrolled far enough
+//Display top bar if page has been scrolled far enough
+function checkScroll(y) {
 	var titleY = document.getElementById("title").getBoundingClientRect().top;
 	if (titleY < y){//Title has passed y and should switch to bar menu
 		title(titleFunc.HIDE);
@@ -84,7 +85,8 @@ function checkScroll(y) {//Display top bar if page has been scrolled far enough
 	}
 }
 
-function setLinks(){//Apply addSmoothScrolling to each element of the top nav menu
+//Apply addSmoothScrolling to each element of the top nav menu
+function setLinks(){
 	var topBarName = document.getElementById('top-bar-name');
 	addSmoothScrolling(topBarName);//Add smooth scrolling to top bar name
 	var menuItems = document.getElementById('menu-top-nav').children;
@@ -94,7 +96,8 @@ function setLinks(){//Apply addSmoothScrolling to each element of the top nav me
 	}
 }
 
-function addSmoothScrolling(element){//Add smooth scrolling to an element
+//Add Firefox smooth scrolling to an element
+function addSmoothScrolling(element){
 	element.onclick = function(){//This is called when menu links are clicked.
 		var destination = document.getElementById(this.href.split('#')[1]);
 		menuClose();//Close hb menu if open
