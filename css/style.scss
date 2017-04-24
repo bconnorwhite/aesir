@@ -27,6 +27,11 @@ $clearLight: rgba(229,229,229,0.9);
 $topBarH: 64px;
 $contact-bp: 960px;
 
+@mixin topBuffer(){
+	margin-top: -$topBarH;
+	padding-top: $topBarH;
+}
+
 //Aspect Ratios
 $two-one: 50vw;
 $sixteen-nine: 56.25vw;
@@ -363,9 +368,10 @@ html {
     #top {
       background-size: contain !important;
       background-repeat: no-repeat !important;
+			position: relative;
+			z-index: 0;
       height: 0;
       width: 100%;
-      z-index: -1;
       color: $light;
       @media(max-width: 540px){
         color: $white;
@@ -450,12 +456,14 @@ html {
       line-height: 3.5rem;
 			text-align: center;
 			background-color: $white;
-			margin-bottom: -$topBarH;
-			padding: 5rem 130px;
-      @media(max-width: 1300px){
-        padding: 5rem 0;
-      }
+			@include topBuffer();
 
+			.wrap {
+				padding: 5rem 5%;
+				@media(max-width: 1300px){
+					padding: 5rem 0%;
+				}
+			}
       p {
 				@include serifFont();
         margin-bottom: 1em;
@@ -524,8 +532,7 @@ html {
       }
     }
 		.front .portfolio{
-			padding-top: $topBarH;
-			margin-bottom: -$topBarH;
+			@include topBuffer();
 			a {
 				&:hover, &:focus {
 					.shade {
@@ -624,9 +631,23 @@ html {
     #contact {
       text-align: center;
 			background-color: $light;
-      padding: 9rem 5rem 7rem 5rem;
+			position: relative;
+			z-index: -1;
+			@include topBuffer();
+			padding-left: 5rem;
+			padding-right: 5rem;
 			@media(max-width: $contact-bp){
-				padding: 8rem 3rem 5rem 3rem;
+				padding-left: 3rem;
+				padding-right: 3rem;
+			}
+
+			.wrap {
+				padding-top: 6rem;
+				padding-bottom: 7rem;
+				@media(max-width: $contact-bp){
+					padding-top: 4rem;
+					padding-bottom: 5rem;
+				}
 			}
 
       h2 {
@@ -769,14 +790,16 @@ html {
 		}
 
 		.four-o-four {
+			background-color: $white;
 			text-align: center;
 			h2 {
 				color: $dark;
 				font-size: 9rem;
 				font-weight: 400;
-				margin: 120px 0 30px;
+				margin: 0;
+				padding: 120px 0 30px;
 				@media(max-width: 540px){
-					margin: 110px 0 30px;
+					padding: 110px 0 30px;
 				}
 			}
 			h3 {
@@ -784,9 +807,10 @@ html {
 				font-size: 2rem;
 			}
 			.button-div {
-				margin: 110px 0;
+				margin: 0;
+				padding: 110px 0;
 				@media(max-width: 540px){
-					margin: 90px 0;
+					padding: 90px 0;
 				}
 			}
 
