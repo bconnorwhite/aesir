@@ -118,6 +118,7 @@ function getBgUrl(el) {
     return bg.replace(/url\(['"]?(.*?)['"]?\)/i, "$1");
 }
 
+//Preload images up to the screen width
 function preloadImages(){
 	var url = getBgUrl(document.getElementById("top"));
 	var s = url.split("/img/");
