@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 <div id='main' class="front">
 	<div id='top'>
+		<img id="header-image" src="" data-src="/wp-content/themes/aesir/img/<?php echo get_theme_mod( 'theme_color', 'hodr' ); ?>_" alt="Connor White" />
 		<div class="shade"></div>
 		<div class='wrap'>
 			<div id='title'>

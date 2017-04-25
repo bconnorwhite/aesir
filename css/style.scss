@@ -101,125 +101,6 @@ table {
 // Theme Colors
 //------------------
 
-.hodr {
-	#top {
-		background: url($imgPath + 'hodr_full.jpg');
-		padding-top: $two-one;
-		@media(max-width: 1920px){
-			background: url($imgPath + 'hodr_1920.jpg');
-		}
-		@media(max-width: 1600px){
-			background: url($imgPath + 'hodr_1600.jpg');
-			padding-top: $sixteen-nine;
-		}
-		@media(max-width: 1440px){
-			background: url($imgPath + 'hodr_1440.jpg');
-			padding-top: $sixteen-ten;
-		}
-		@media(max-width: 1080px){
-			background: url($imgPath + 'hodr_1080.jpg');
-			padding-top: $three-two;
-		}
-		@media(max-width: 720px){
-			background: url($imgPath + 'hodr_720.jpg');
-			padding-top: $one-one;
-		}
-		@media(max-width: 540px){
-			background: url($imgPath + 'hodr_540.jpg');
-			padding-top: $four-five;
-		}
-	}
-}
-
-.freyja {
-	#top {
-		background: url($imgPath + 'freyja_full.jpg');
-		padding-top: $two-one;
-		@media(max-width: 1920px){
-			background: url($imgPath + 'freyja_1920.jpg');
-		}
-		@media(max-width: 1600px){
-			background: url($imgPath + 'freyja_1600.jpg');
-			padding-top: $sixteen-nine;
-		}
-		@media(max-width: 1440px){
-			background: url($imgPath + 'freyja_1440.jpg');
-			padding-top: $sixteen-ten;
-		}
-		@media(max-width: 1080px){
-			background: url($imgPath + 'freyja_1080.jpg');
-			padding-top: $three-two;
-		}
-		@media(max-width: 720px){
-			background: url($imgPath + 'freyja_720.jpg');
-			padding-top: $one-one;
-		}
-		@media(max-width: 540px){
-			background: url($imgPath + 'freyja_540.jpg');
-			padding-top: $four-five;
-		}
-	}
-}
-
-.njordr {
-	#top {
-		background: url($imgPath + 'njordr_full.jpg');
-		padding-top: $two-one;
-		@media(max-width: 1920px){
-			background: url($imgPath + 'njordr_1920.jpg');
-		}
-		@media(max-width: 1600px){
-			background: url($imgPath + 'njordr_1600.jpg');
-			padding-top: $sixteen-nine;
-		}
-		@media(max-width: 1440px){
-			background: url($imgPath + 'njordr_1440.jpg');
-			padding-top: $sixteen-ten;
-		}
-		@media(max-width: 1080px){
-			background: url($imgPath + 'njordr_1080.jpg');
-			padding-top: $three-two;
-		}
-		@media(max-width: 720px){
-			background: url($imgPath + 'njordr_720.jpg');
-			padding-top: $one-one;
-		}
-		@media(max-width: 540px){
-			background: url($imgPath + 'njordr_540.jpg');
-			padding-top: $four-five;
-		}
-	}
-}
-
-.tyr {
-	#top {
-		background: url($imgPath + 'tyr_full.jpg');
-		padding-top: $two-one;
-		@media(max-width: 1920px){
-			background: url($imgPath + 'tyr_1920.jpg');
-		}
-		@media(max-width: 1600px){
-			background: url($imgPath + 'tyr_1600.jpg');
-			padding-top: $sixteen-nine;
-		}
-		@media(max-width: 1440px){
-			background: url($imgPath + 'tyr_1440.jpg');
-			padding-top: $sixteen-ten;
-		}
-		@media(max-width: 1080px){
-			background: url($imgPath + 'tyr_1080.jpg');
-			padding-top: $three-two;
-		}
-		@media(max-width: 720px){
-			background: url($imgPath + 'tyr_720.jpg');
-			padding-top: $one-one;
-		}
-		@media(max-width: 540px){
-			background: url($imgPath + 'tyr_540.jpg');
-			padding-top: $four-five;
-		}
-	}
-}
 
 //------------------
 // Main Styling
@@ -376,7 +257,28 @@ html {
       @media(max-width: 540px){
         color: $white;
       }
+			padding-top: $two-one;
+			@media(max-width: 1600px){
+				padding-top: $sixteen-nine;
+			}
+			@media(max-width: 1440px){
+				padding-top: $sixteen-ten;
+			}
+			@media(max-width: 1080px){
+				padding-top: $three-two;
+			}
+			@media(max-width: 720px){
+				padding-top: $one-one;
+			}
+			@media(max-width: 540px){
+				padding-top: $four-five;
+			}
 
+			#header-image {
+				position: absolute;
+				top:0;
+				width: 100%;
+			}
 			.shade {
 				width: 100%;
 				position: absolute;
