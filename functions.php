@@ -36,6 +36,17 @@ function enqueue_assets(){
 }
 add_action( 'wp_enqueue_scripts', 'enqueue_assets' );
 
+/* Set Async and Defer  -------- */
+function add_async_attribute($tag, $handle) {
+    if($handle == 'priority-min-js')
+    	return str_replace(' src', ' async="async" src', $tag);
+		else if ($handle == 'secondary-min-js')
+			return str_replace(' src', ' defer="defer" src', $tag);
+		else
+			return $tag;
+}
+add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
+
 /* Register Non-Critical Styles in Footer  -------- */
 function enqueue_footer_styles(){
     wp_enqueue_style('font-awesome', get_template_directory_uri() . '/font-awesome/style.css', array(), null);
