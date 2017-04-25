@@ -18,7 +18,7 @@ set_post_thumbnail_size(1600, 460);
 function enqueue_assets(){
 	//Priority JS
 	if(is_front_page()){
-		wp_register_script('priority-min-js', get_template_directory_uri() . "/js/priority.min.js", array(), null, true);
+		wp_register_script('priority-min-js', get_template_directory_uri() . "/js/priority.min.js", array(), null, false);
 		wp_enqueue_script('priority-min-js');
 		$translation_array = array( 'themeUrl' => get_stylesheet_directory_uri(), 'themeColor' => get_theme_mod( 'theme_color', 'hodr' ) );
 		wp_localize_script( 'priority-min-js', 'aesir', $translation_array );
