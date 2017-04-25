@@ -1,4 +1,4 @@
-// This file manages menu functionality and interaction with title
+// This file manages menu functionality, interaction with title, and image management
 
 var solidBarY = 112;
 
@@ -106,6 +106,15 @@ function addSmoothScrolling(element){
 	};
 }
 
+function loadDeferredImages(){
+	var images = document.getElementsByClassName('deferred');
+	for(var i=0; i<images.length; i++){
+		if(images[i].getAttribute('data-src')) {
+			images[i].setAttribute('src',images[i].getAttribute('data-src'));
+		}
+	}
+}
+
 function getBgUrl(el) {
     var bg = "";
     if (el.currentStyle) { // IE
@@ -164,5 +173,6 @@ function fadeIn(){
 	fadeIn();
 	menuClose();
 	setLinks();
+	loadDeferredImages();
 	preloadImages();
 })();
