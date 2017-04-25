@@ -42,6 +42,12 @@ function add_async_attribute($tag, $handle) {
 }
 add_filter('script_loader_tag', 'add_async_attribute', 10, 2);
 
+/* Register Non-Critical Styles in Footer  -------- */
+function enqueue_footer_styles(){
+    wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome.css', array(), null);
+};
+add_action('get_footer', 'enqueue_footer_styles');
+
 /* Custom Login Screen-------- */
 function enqueue_login_stylesheet() {
     wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/css/style-login.css', array(), null);
