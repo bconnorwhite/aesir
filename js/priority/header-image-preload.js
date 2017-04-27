@@ -10,11 +10,19 @@ function getHeaderImageSize(width){
 }
 
 function getHeaderImagePath(){
-  return aesir.themeUrl + "/img/" + aesir.themeColor + "_";
+  return aesir.themeUrl + "/img/" + aesir.themeColor + "/";
+}
+
+function getHeaderImageExtension(width){
+  if(window.devicePixelRatio > 1.5 && width != 'full'){
+    return "@2x.jpg";
+  } else {
+    return ".jpg";
+  }
 }
 
 function getHeaderImageSrc(path, width){
-  return path + width + ".jpg";
+    return path + width + getHeaderImageExtension(width);
 }
 
 header_img = new Image();
