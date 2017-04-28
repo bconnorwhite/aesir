@@ -1,4 +1,4 @@
-var form = document.forms['contact'];
+var form = document.forms.contact;
 
 /* sendEmail(url)
  * Input: URL of mail.php
@@ -8,7 +8,7 @@ var form = document.forms['contact'];
  * Return: n/a
  */
 function sendEmail(url){
-  if(form["email"].value == "" || form["message"].value == ""){
+  if(form.email.value === "" || form.message.value === ""){
     return false;
   } else {
     var xhttp = new XMLHttpRequest();
@@ -20,7 +20,7 @@ function sendEmail(url){
     };
     xhttp.open("POST", url, true);//POST to mail.php (url)
     xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    var params = "name=" + form["name"].value + "&email=" + form["email"].value + "&message=" + form["message"].value;
+    var params = "name=" + form.name.value + "&email=" + form.email.value + "&message=" + form.message.value;
     xhttp.send(params);
   }
 }
@@ -34,7 +34,7 @@ function hideContactForm(){
   form.style.opacity = 0;//Set opacity to 0. Tranisiton will take 1s to complete
   setTimeout(function(){//After transition is complete, get rid of form entirely
     form.style.visibility = "hidden";
-    form["message"].style.height = "0";
+    form.message.style.height = "0";
     form.style.height = "0";
     document.getElementById('thanks').style.display = "block";//Show thank you message
   }, 1000);
@@ -46,7 +46,7 @@ function hideContactForm(){
  * Return: n/a
  */
 function personalizeThankYouMessage(){
-  var name = form["name"].value;
+  var name = form.name.value;
   firstName = getFirstName(name);
   if(firstName !== ""){//Add space before name, if not blank
     document.getElementById('thanks').innerHTML = "Thanks " + firstName + "! Your message has been sent.";

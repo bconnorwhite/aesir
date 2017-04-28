@@ -33,8 +33,10 @@ function resetHeaderImage(){
 (function(){
 	if(document.getElementById("header-image") !== null){//If front page
 		resetHeaderImage();
+	}
+	loadDeferredImages();
+	if(document.getElementById("header-image") !== null){//If front page
 		preloadHeaderImages();
 		window.addEventListener('resize', resetHeaderImage);
 	}
-	loadDeferredImages();
 })();
