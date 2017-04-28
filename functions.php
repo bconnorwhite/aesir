@@ -41,6 +41,14 @@ function enqueue_footer_styles(){
 };
 add_action('get_footer', 'enqueue_footer_styles');
 
+/*Remove versions from scripts and styles */
+function remove_script_version( $src ){
+	$parts = explode( '?ver', $src );
+	return $parts[0];
+}
+add_filter( 'script_loader_src', 'remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'remove_script_version', 15, 1 );
+
 /* Custom Login Screen-------- */
 function enqueue_login_stylesheet() {
     wp_enqueue_style('custom-login', get_stylesheet_directory_uri() . '/css/style-login.css', array(), null);
@@ -115,9 +123,11 @@ add_action( 'customize_register' , 'aesir_options' );
 function aesir_widgets_init() {
 	register_sidebar( array(
 		'name'          => 'About',
-		'id'            => 'about',
-		'before_widget' => '<div>',
-		'after_widget'  => '</div>',
+		'id'            => 'about'
+	) );
+	register_sidebar( array(
+		'name'          => 'Services',
+		'id'            => 'services'
 	) );
 }
 add_action( 'widgets_init', 'aesir_widgets_init' );
@@ -156,7 +166,48 @@ class about_widget extends WP_Widget {
 	}
 }
 
+class service_widget extends WP_Widget {
+	public function __construct() {
+		$widget_options = array(
+			'classname' => 'service_widget',
+			'description' => 'Service Widget',
+		);
+		parent::__construct( 'service_widget', 'Service Widget', $widget_options);
+	}
+	public function widget($args, $instance){
+		$service_icon = apply_filters('service_icon', $instance['service_icon']);
+		$service_name = apply_filters('service_name', $instance['service_name']);
+		$service_text = apply_filters('service_text', $instance['service_text']);?>
+		<div class="service">
+			<svg class="service-icon"><use xlink:href="<?php bloginfo('template_url'); ?>/img/services/<?php echo $service_icon ?>" /></svg>
+			<h3><?php echo $service_name ?></h3>
+			<p><?php echo $service_text ?></p>
+		</div>
+	<?php }
+	public function form($instance){
+		$service_icon = !empty($instance['service_icon']) ? $instance['service_icon'] : '';
+		$service_name = !empty($instance['service_name']) ? $instance['service_name'] : '';
+		$service_text = !empty($instance['service_text']) ? $instance['service_text'] : ''; ?>
+		<p>
+    	<label for="<?php echo $this->get_field_id('service_icon'); ?>">Service Icon Filename:</label><br />
+    	<textarea rows="1" id="<?php echo $this->get_field_id('service_icon'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_icon'); ?>"><?php echo $service_icon; ?></textarea><br />
+			<label for="<?php echo $this->get_field_id('service_name'); ?>">Service Name:</label><br />
+    	<textarea rows="1" id="<?php echo $this->get_field_id('service_name'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_name'); ?>"><?php echo $service_name; ?></textarea><br />
+			<label for="<?php echo $this->get_field_id('service_text'); ?>">Service Description:</label><br />
+    	<textarea rows="3" id="<?php echo $this->get_field_id('service_text'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_text'); ?>"><?php echo $service_text; ?></textarea><br />
+		</p>
+	<?php }
+	public function update($new_instance, $old_instance){
+		$instance = $old_instance;
+		$instance['service_icon'] = $new_instance['service_icon'];
+		$instance['service_name'] = $new_instance['service_name'];
+		$instance['service_text'] = $new_instance['service_text'];
+		return $instance;
+	}
+}
+
 function register_widgets() {
 	register_widget('about_widget');
+	register_widget('service_widget');
 }
 add_action('widgets_init', 'register_widgets');
