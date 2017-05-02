@@ -6,7 +6,7 @@
         <?php } else { ?>
         	<title><?php wp_title(); ?> | <?php bloginfo('name'); ?></title>
         <?php } ?>
-        <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/<?php echo get_theme_mod('theme_color', 'hodr'); ?>_favicon.ico" />
+        <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/img/<?php echo get_theme_mod('theme_color', 'hodr'); ?>/favicon.ico" />
         <meta name="description" content="A showcase of the work of Connor White, a web developer specializing in Wordpress.">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="robots" content="index,follow">
@@ -20,7 +20,7 @@
         <?php wp_head(); ?>
     </head>
     <body id="body" <?php if(is_front_page()){ ?>class="home"<?php } ?>>
-      <header id="header" <?php if(!is_front_page()){?>class="barMenu"<?php } ?>>
+      <header id="header" class="<?php if(!is_front_page()){ echo "barMenu"; } else { echo get_theme_mod( 'header_style', 'vertical' ); } ?>">
         <div class="wrap">
           <a id="top-bar-name" href="/#top"><h1>Connor <strong>White</strong></h1></a>
           <?php wp_nav_menu(array('theme_location' => 'top-nav')); ?>

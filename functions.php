@@ -20,7 +20,7 @@ function enqueue_assets(){
 	wp_enqueue_style('style', get_template_directory_uri() . "/css/style.css", array(), null);
 	//Google Fonts
 	$query_args = array(
-		'family' => 'Source+Sans+Pro:200,300,300i,400,600|Source+Sans+Serif:400,600',
+		'family' => 'Source+Sans+Pro:200,300,300i,400,400i,600|Source+Sans+Serif:400,600',
 		'subset' => 'latin');
 	wp_enqueue_style('google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css"), array(), null);
 	//Secondary JS
@@ -85,12 +85,12 @@ function add_post_tags($posttags){
 /* Customizer------------*/
 function aesir_options( $wp_customize ) {
 	$wp_customize->add_section(
-		'theme_colors',
+		'aesir_options',
 		array(
-			'title'       => __( 'Theme Color', 'aesir' ),
+			'title'       => __( 'Aesir Options', 'aesir' ),
 			'priority'    => 100,
 			'capability'  => 'edit_theme_options',
-			'description' => __('Change theme colors here.', 'aesir'),
+			'description' => __('Aesir custom options.', 'aesir'),
 		)
 	);
 	$wp_customize->add_setting( 'theme_color',
@@ -103,7 +103,7 @@ function aesir_options( $wp_customize ) {
 		'theme_color_control',
 		array(
 			'label'    => __( 'Theme Color', 'aesir' ),
-			'section'  => 'theme_colors',
+			'section'  => 'aesir_options',
 			'settings' => 'theme_color',
 			'priority' => 10,
 			'type' 		 => 'select',
@@ -114,6 +114,29 @@ function aesir_options( $wp_customize ) {
 					'tyr'  		=> __( 'Tyr' )
 			),
 			'default'  => 'hodr'
+		)
+	));
+	$wp_customize->add_setting( 'header_style',
+		array(
+			'default' => 'vertical'
+		)
+	);
+	$wp_customize->add_control( new WP_Customize_Control(
+		$wp_customize,
+		'header_style_control',
+		array(
+			'label'    => __( 'Header Style', 'aesir' ),
+			'section'  => 'aesir_options',
+			'settings' => 'header_style',
+			'priority' => 10,
+			'type' 		 => 'select',
+			'choices'  => array(
+					'vertical'		=> __( 'Vertical' ),
+					'Horizontal'=> __( 'Horizontal' ),
+					'Glass'			=> __( 'Glass' ),
+					'Solid'  		=> __( 'Solid' )
+			),
+			'default'  => 'vertical'
 		)
 	));
 }
@@ -142,9 +165,10 @@ class about_widget extends WP_Widget {
 		parent::__construct( 'about_widget', 'About Widget', $widget_options);
 	}
 	public function widget($args, $instance){
-		$text = apply_filters('widget_text', $instance['text']);?>
-		<div id="about">
-			<div id="slash">
+		$text = apply_filters('text', $instance['text']);
+		$style = apply_filters('style', $instance['style']); ?>
+		<div id="about" class="<?php echo $style ?>">
+			<div class="container">
 				<div class="wrap">
 					<p><?php echo $text ?></p>
 					<a class='button' href="mailto:connor@connorwhite.org">Let's Chat</a>
@@ -153,15 +177,24 @@ class about_widget extends WP_Widget {
 		</div>
 	<?php }
 	public function form($instance){
-		$text = !empty($instance['text']) ? $instance['text'] : ''; ?>
+		$text = !empty($instance['text']) ? $instance['text'] : '';
+		$style = !empty($instance['style']) ? $instance['style'] : ''; ?>
 		<p>
     	<label for="<?php echo $this->get_field_id('text'); ?>">Text:</label><br />
-    	<textarea rows="3" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea><br />
+    	<textarea rows="5" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea><br />
+			<label for="<?php echo $this->get_field_id('style'); ?>">Style:</label><br />
+			<select name="<?php echo $this->get_field_name('style'); ?>">
+  			<option <?php selected( $instance['style'], 'normal'); ?> value="normal">Normal</option>
+				<option <?php selected( $instance['style'], 'box'); ?>value="box">Box</option>
+  			<option <?php selected( $instance['style'], 'slash'); ?>value="slash">Slash</option>
+				<option <?php selected( $instance['style'], 'slash box'); ?>value="slash box">Slash-Box</option>
+			</select>
 		</p>
 	<?php }
 	public function update($new_instance, $old_instance){
 		$instance = $old_instance;
 		$instance['text'] = $new_instance['text'];
+		$instance['style'] = $new_instance['style'];
 		return $instance;
 	}
 }
@@ -177,24 +210,34 @@ class service_widget extends WP_Widget {
 	public function widget($args, $instance){
 		$service_icon = apply_filters('service_icon', $instance['service_icon']);
 		$service_name = apply_filters('service_name', $instance['service_name']);
-		$service_text = apply_filters('service_text', $instance['service_text']);?>
-		<div class="service">
-			<svg class="service-icon"><use xlink:href="<?php bloginfo('template_url'); ?>/img/services/<?php echo $service_icon ?>" /></svg>
-			<h3><?php echo $service_name ?></h3>
-			<p><?php echo $service_text ?></p>
-		</div>
+		$service_text = apply_filters('service_text', $instance['service_text']);
+		$service_link = apply_filters('service_link', $instance['service_link']);
+		$service_url = apply_filters('service_url', $instance['service_url']); ?>
+		<a href="<?php echo $service_url ?>" target="_blank" class="service">
+				<?php echo file_get_contents((get_template_directory() . "/img/services/" . $service_icon)); ?>
+				<h3><?php echo $service_name ?></h3>
+				<p><?php echo $service_text ?></p>
+				<br />
+				<i><?php echo $service_link ?></i>
+		</a>
 	<?php }
 	public function form($instance){
 		$service_icon = !empty($instance['service_icon']) ? $instance['service_icon'] : '';
 		$service_name = !empty($instance['service_name']) ? $instance['service_name'] : '';
-		$service_text = !empty($instance['service_text']) ? $instance['service_text'] : ''; ?>
+		$service_text = !empty($instance['service_text']) ? $instance['service_text'] : '';
+		$service_link = !empty($instance['service_link']) ? $instance['service_link'] : '';
+		$service_url = !empty($instance['service_url']) ? $instance['service_url'] : ''; ?>
 		<p>
     	<label for="<?php echo $this->get_field_id('service_icon'); ?>">Service Icon Filename:</label><br />
     	<textarea rows="1" id="<?php echo $this->get_field_id('service_icon'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_icon'); ?>"><?php echo $service_icon; ?></textarea><br />
 			<label for="<?php echo $this->get_field_id('service_name'); ?>">Service Name:</label><br />
     	<textarea rows="1" id="<?php echo $this->get_field_id('service_name'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_name'); ?>"><?php echo $service_name; ?></textarea><br />
 			<label for="<?php echo $this->get_field_id('service_text'); ?>">Service Description:</label><br />
-    	<textarea rows="3" id="<?php echo $this->get_field_id('service_text'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_text'); ?>"><?php echo $service_text; ?></textarea><br />
+    	<textarea rows="5" id="<?php echo $this->get_field_id('service_text'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_text'); ?>"><?php echo $service_text; ?></textarea><br />
+			<label for="<?php echo $this->get_field_id('service_link'); ?>">Service Link:</label><br />
+    	<textarea rows="1" id="<?php echo $this->get_field_id('service_link'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_link'); ?>"><?php echo $service_link; ?></textarea><br />
+			<label for="<?php echo $this->get_field_id('service_url'); ?>">Service URL:</label><br />
+			<textarea rows="2" id="<?php echo $this->get_field_id('service_url'); ?>" class="widefat" name="<?php echo $this->get_field_name('service_url'); ?>"><?php echo $service_url; ?></textarea><br />
 		</p>
 	<?php }
 	public function update($new_instance, $old_instance){
@@ -202,6 +245,8 @@ class service_widget extends WP_Widget {
 		$instance['service_icon'] = $new_instance['service_icon'];
 		$instance['service_name'] = $new_instance['service_name'];
 		$instance['service_text'] = $new_instance['service_text'];
+		$instance['service_link'] = $new_instance['service_link'];
+		$instance['service_url'] = $new_instance['service_url'];
 		return $instance;
 	}
 }

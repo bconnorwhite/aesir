@@ -13,15 +13,17 @@ $serif-font:'Source Sans Serif', serif;
 }
 
 //Colors
-$dark: #2c2c2c;
-$slight: #404040;
-$light: #e5e5e5;
-$med: #686868;
-$medLight: #979797;
 $white: #fff;
+$lighter: #f0f0f0;
+$light: #e5e5e5;
+$medLight: #979797;
+$med: #686868;
+$slight: #404040;
+$dark: #2c2c2c;
 $shade: rgba(44, 44, 44, 0.5);
 $clear: rgba(0,0,0,0);
 $clearLight: rgba(229,229,229,0.9);
+$clearWhite: rgba(256,256,256,0.9);
 
 //Measurements
 $topBarH: 64px;
@@ -98,9 +100,227 @@ table {
 }
 
 //------------------
+// Animations
+//------------------
+
+@keyframes fadein-a {
+	0% {opacity: 0;}
+	20% {opacity: 1;}
+	100% {opacity: 1;}
+}
+@keyframes fadein-b {
+	0% {opacity: 0;}
+	5% {opacity: 0;}
+	25% {opacity: 1;}
+	100% {opacity: 1;}
+}
+@keyframes fadein-c {
+	0% {opacity: 0;}
+	10% {opacity: 0;}
+	30% {opacity: 1;}
+	100% {opacity: 1;}
+}
+
+//------------------
 // Theme Colors
 //------------------
 
+.hodr {
+	header, header a  {
+		color: $light;
+	}
+	.openMenu {
+		background-color: $clearLight;
+		ul {
+			background-color: $clearLight;
+		}
+	}
+	.button, input[type="submit"] {
+		&:hover, &:focus, &:active {
+			background-color: $dark;
+			border-color: $dark;
+			box-shadow: inset 0 0 20px 3px #000;
+			color: $light;
+		}
+	}
+	footer {
+    background-color: $medLight;
+		h2 {
+			color: $dark;
+		}
+	}
+	.service svg {
+		.primary {
+			fill: #5E5E5E;
+		}
+		.primary-shade {
+			fill: #474747;
+		}
+		.primary-tint {
+			fill: #7E7E7E;
+		}
+		.secondary {
+			fill: #939393;
+		}
+		.secondary-shade {
+			fill: #717171;
+		}
+		.secondary-tint {
+			fill: #B6B6B6;
+		}
+		.tertiary {
+			fill: #A8A8A8;
+		}
+		.tertiary-shade {
+			fill: #7E7E7E;
+		}
+		.black {
+			fill: #2c2c2c;
+		}
+		.gray {
+			fill: #B0B0B0;
+		}
+		.light-gray {
+			fill: #D6D6D6;
+		}
+		.white {
+			fill: #FFFFFF;
+		}
+	}
+}
+
+.freyja {
+	header, header a  {
+		color: $light;
+	}
+	.openMenu {
+		background-color: $clearLight;
+		ul {
+			background-color: $clearLight;
+		}
+	}
+	.button, input[type="submit"] {
+		&:hover, &:focus, &:active {
+			background-color: #49637F;
+			border-color: #49637F;
+			box-shadow: inset 0 0 20px 3px #304C69;
+			color: #fff;
+		}
+	}
+	footer {
+    background-color: #5CBA5C;
+		h2 {
+			color: #fff;
+		}
+	}
+	.service svg {
+		.primary {
+			fill: #49637F;
+		}
+		.primary-shade {
+			fill: #304C69;
+		}
+		.primary-tint {
+			fill: #6C8298;
+		}
+		.secondary {
+			fill: #5CBA5C;
+		}
+		.secondary-shade {
+			fill: #369B36;
+		}
+		.secondary-tint {
+			fill: #8AD58A;
+		}
+		.tertiary {
+			fill: #9CABBB;
+		}
+		.tertiary-shade {
+			fill: #6C8298;
+		}
+		.black {
+			fill: #2c2c2c;
+		}
+		.gray {
+			fill: #B0B0B0;
+		}
+		.light-gray {
+			fill: #D6D6D6;
+		}
+		.white {
+			fill: #FFFFFF;
+		}
+	}
+}
+
+.njordr {
+	header, header a {
+		color: $white;
+	}
+	.openMenu {
+		background-color: $clearWhite;
+		ul {
+			background-color: $clearWhite;
+		}
+	}
+	a.service i {
+		color: #458FCD !important;
+		&:hover {
+			color: #2678BD !important;
+		}
+	}
+	.button, input[type="submit"] {
+		&:hover, &:focus, &:active {
+			background-color: #458FCD;
+			border-color: #458FCD;
+			color: #fff;
+		}
+	}
+	footer {
+		background-color: #458FCD;
+		h2 {
+			color: #fff;
+		}
+	}
+	.service svg {
+		.primary {
+			fill: #2678BD;
+		}
+		.primary-shade {
+			fill: #0A5DA2;
+		}
+		.primary-tint {
+			fill: #458FCD;
+		}
+		.secondary {
+			fill: #1CC480;
+		}
+		.secondary-shade {
+			fill: #00AB66;
+		}
+		.secondary-tint {
+			fill: #3CD296;
+		}
+		.tertiary {
+			fill: #98C6EC;
+		}
+		.tertiary-shade {
+			fill: #69A8DC;
+		}
+		.black {
+			fill: #2c2c2c;
+		}
+		.gray {
+			fill: #B0B0B0;
+		}
+		.light-gray {
+			fill: #D6D6D6;
+		}
+		.white {
+			fill: #FFFFFF;
+		}
+	}
+}
 
 //------------------
 // Main Styling
@@ -163,8 +383,6 @@ html {
 		-webkit-appearance:none;
 
 		&:hover, &:focus, &:active {
-			background-color: $dark;
-			color: $light;
 			padding: 13px 50px;
 		}
 		&:focus {
@@ -217,10 +435,6 @@ html {
 						font-size: 1.25rem;
 						line-height: 2.6rem;
 					}
-
-          a {
-            color: $light;
-          }
         }
       }
 			#hamburger {
@@ -247,10 +461,10 @@ html {
 		}
 
     #top {
+			position: relative;
+			z-index: 9;
       background-size: contain !important;
       background-repeat: no-repeat !important;
-			position: relative;
-			z-index: 0;
       height: 0;
       width: 100%;
       color: $light;
@@ -295,39 +509,39 @@ html {
 				text-align: center;
 				width: 18.8em;
         position: relative;
-        top: -360px;
+        top: -365px;
         @media(max-width: 1280px){
-          top: -300px;
+          top: -305px;
         }
         @media(max-width: 980px){
-          top: -240px;
+          top: -245px;
         }
         @media(max-width: 860px){
-          top: -220px;
+          top: -225px;
         }
         @media(max-width: 800px){
-          top: -200px;
+          top: -205px;
         }
         @media(max-width: 720px){
-          top: -320px;
+          top: -325px;
         }
         @media(max-width: 640px){
           top: -290px;
         }
         @media(max-width: 540px){
-          top: -185px;
+          top: -190px;
         }
         @media(max-width: 480px){
-          top: -170px;
+          top: -180px;
         }
         @media(max-width: 414px){
-          top: -155px;
+          top: -165px;
         }
         @media(max-width: 375px){
-          top: -140px;
+          top: -150px;
         }
         @media(max-width: 320px){
-          top: -125px;
+          top: -140px;
         }
 
         h1 {
@@ -354,16 +568,22 @@ html {
     }
 
     #about{
+			background-color: transparent;
+			position: relative;
+			z-index: 9;
       font-size: 2.25rem;
       line-height: 3.5rem;
 			text-align: center;
-			background-color: $white;
 			@include topBuffer();
-
-			.wrap {
-				padding: 5rem 5%;
-				@media(max-width: 1300px){
-					padding: 5rem 0%;
+			.container {
+				border-bottom: 1px solid $light;
+				background-color: $white;
+				.wrap {
+					max-width: 1080px;
+					padding: 5rem 5%;
+					@media(max-width: 1300px){
+						padding: 5rem 0%;
+					}
 				}
 			}
       p {
@@ -374,8 +594,148 @@ html {
 				}
       }
     }
+		#about.slash{
+			padding: 0;
+			position: relative;
+			margin-top: -1.74604vw;
+			@media(min-width: 1440px){
+				margin-top: -3vw;
+			}
+			.container {
+				border-bottom: none;
+    		transform: rotate(358deg) skew(-2deg);
+				.wrap {
+					transform: rotate(-358deg) skew(2deg);
+				}
+			}
+		}
+		#about.box {
+			padding: 0;
+			background-color: $lighter;
+			margin: 0 0 -8vw;
+			.container {
+				background-color: transparent;
+				.wrap {
+					background-color: $white;
+					border: 1px solid $light;
+					position: relative;
+					width: 70%;
+					top: -4vw;
+					@media(max-width: 720px){
+						width: 80%;
+						top: -3vw;
+					}
+					margin: 0 auto;
+					@media(max-width: 1300px){
+						padding: 5rem 5%;
+					}
+				}
+			}
+		}
+		#about.slash.box {
+			background-color: transparent;
+			margin: 0 0 -8rem;
+			@media(min-width: 1440px){
+				margin: 0 0 -10rem;
+			}
+			.container {
+				position: relative;
+				top: -1.74604vw;
+				background-color: $lighter;
+				.wrap {
+					top: -6vw;
+				}
+			}
+		}
+
+		#services {
+			@include topBuffer();
+			text-align: center;
+			padding: 7rem 0 5rem;
+			background-color: $lighter;
+			h2 {
+				font-weight: 200;
+				font-size: 1.75rem;
+				line-height: 2em;
+				border-bottom: 1px solid $med;
+				margin-bottom: 1.25em;
+				text-transform: uppercase;
+				letter-spacing: 0.18em;
+				display: inline-block;
+			}
+			.wrap {
+				a.service {
+					color: $dark;
+					display: inline-block;
+					padding: 3rem 2rem;
+					margin: 20px;
+					max-width: 400px;
+					width: 35%;
+					@media(max-width: 845px){
+						width: 70%;
+					}
+					@media(min-width: 2170px){
+						width: 17.5%;
+					}
+					background-color: $white;
+					border: 1px solid $light;
+					transition: box-shadow 0.3s ease-in-out;
+					&:hover {
+						box-shadow: 0px 0px 20px 20px $light;
+					}
+					svg {
+						width: 10rem;
+					}
+					svg#design-to-wordpress {
+						.a {
+							animation: fadein-a 5s ease infinite;
+						}
+						.b {
+							animation: fadein-b 5s ease infinite;
+						}
+						.c {
+							animation: fadein-c 5s ease infinite;
+						}
+					}
+					h3 {
+						padding: 1em 0;
+						line-height: 1.4em;
+						font-size: 1.25rem;
+						font-weight: 400;
+					}
+					p {
+						text-align: left;
+						line-height: 1.4em;
+						font-size: 1.0625rem;
+						height: 6em;
+						@media(max-width: 500px){
+							height: 8em;
+						}
+						@media(min-width: 846px){
+							height: 9em;
+						}
+						@media(min-width: 925px){
+							height: 7em;
+						}
+						@media(min-width: 1440){
+							height: 6em;
+						}
+					}
+					i {
+						color: $med;
+				    font-size: 1.0625rem;
+				    font-style: italic;
+				    font-weight: 300;
+						&:hover {
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
 
     .portfolio {
+			background-color: $lighter;
       .case-study {
         width: 100%;
         height: 28.75vw;
@@ -390,7 +750,7 @@ html {
 				img {
 					width: 100%;
 				}
-        h2 {
+        h3 {
           text-transform: uppercase;
           text-align: center;
           font-size: 2.5rem;
@@ -436,6 +796,22 @@ html {
     }
 		.front .portfolio{
 			@include topBuffer();
+			@media(max-width: 720px){
+				padding-top: 20px;
+			}
+			text-align: center;
+			position: relative;
+			z-index: 8;
+			h2 {
+				font-weight: 200;
+				font-size: 1.75rem;
+				line-height: 2em;
+				border-bottom: 1px solid $med;
+				margin: 0.75em 0 1.5em;
+				text-transform: uppercase;
+				letter-spacing: 0.18em;
+				display: inline-block;
+			}
 			a {
 				&:hover, &:focus, &:active {
 					.shade {
@@ -444,7 +820,7 @@ html {
 							background-color: $clear;
 						}
 					}
-					h2 {
+					h3 {
 						color: $dark;
 						background-color: $light;
 						&:hover, &:focus {
@@ -467,6 +843,8 @@ html {
 		.content {
 			@include serifFont();
 			background-color: $white;
+			position: relative;
+			z-index: 8;
 			padding: 60px 15px;
 			font-size: 1.15rem;
 			color: $slight;
@@ -536,7 +914,7 @@ html {
       text-align: center;
 			background-color: $light;
 			position: relative;
-			z-index: -1;
+			z-index: 7;
 			@include topBuffer();
 			padding-left: 5rem;
 			padding-right: 5rem;
@@ -609,7 +987,7 @@ html {
 							margin-right: 5%;
 							@media(max-width: $contact-bp){
 								margin-right: 0;
-								margin-bottom: 8px;
+								margin-bottom: 6px;
 							}
 						}
 						p {
@@ -628,8 +1006,10 @@ html {
 							outline: none;
 							font-weight: 300;
 							font-family: $sans-font;
-							height: 2.125rem;
+							height: 2.25rem;
 							padding-left: 10px;
+							position: relative;
+							top: -2px;
 						}
 					}
 				}
@@ -721,7 +1101,6 @@ html {
 		}
 
     footer {
-      background-color: $medLight;
       text-align: center;
       line-height: 64px;
 			padding-top: 40px;
@@ -783,7 +1162,6 @@ html {
 
 	a h1 {
 		float: left;
-		color: $light;
 		line-height: $topBarH;
 		text-transform: lowercase;
 		letter-spacing: 0.18rem;
@@ -820,8 +1198,6 @@ html {
 }
 
 .openMenu {
-	background-color: $clearLight;
-
 	a h1 {
 		color: $dark;
 	}
@@ -831,7 +1207,6 @@ html {
 		display: block;
 		text-align: center;
 		top: 64px;
-		background: $clearLight;
 		left: 0;
 		padding-top: 12px;
 		height: 100vh;
