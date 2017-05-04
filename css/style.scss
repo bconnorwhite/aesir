@@ -683,6 +683,8 @@ html {
 			text-align: center;
 			padding: 7rem 0 0;
 			background-color: $lighter;
+			position: relative;
+			z-index: 8;
 			h2 {
 				font-weight: 200;
 				font-size: 1.75rem;
@@ -842,7 +844,7 @@ html {
 			}
 			text-align: center;
 			position: relative;
-			z-index: 8;
+			z-index: 7;
 			h2 {
 				font-weight: 200;
 				font-size: 1.75rem;
@@ -955,7 +957,7 @@ html {
       text-align: center;
 			background-color: $light;
 			position: relative;
-			z-index: 7;
+			z-index: 6;
 			@include topBuffer();
 			padding-left: 5rem;
 			padding-right: 5rem;
