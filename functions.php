@@ -166,8 +166,8 @@ class about_widget extends WP_Widget {
 	}
 	public function widget($args, $instance){
 		$text = apply_filters('text', $instance['text']);
-		$style = apply_filters('style', $instance['style']); ?>
-		<div id="about" class="<?php echo $style ?>">
+		$type = apply_filters('type', $instance['type']); ?>
+		<div id="about" class="<?php echo $type ?>">
 			<div class="container">
 				<div class="wrap">
 					<p><?php echo $text ?></p>
@@ -178,23 +178,23 @@ class about_widget extends WP_Widget {
 	<?php }
 	public function form($instance){
 		$text = !empty($instance['text']) ? $instance['text'] : '';
-		$style = !empty($instance['style']) ? $instance['style'] : ''; ?>
+		$type = !empty($instance['type']) ? $instance['type'] : ''; ?>
 		<p>
     	<label for="<?php echo $this->get_field_id('text'); ?>">Text:</label><br />
     	<textarea rows="5" id="<?php echo $this->get_field_id('text'); ?>" class="widefat" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea><br />
-			<label for="<?php echo $this->get_field_id('style'); ?>">Style:</label><br />
-			<select name="<?php echo $this->get_field_name('style'); ?>">
-  			<option <?php selected( $instance['style'], 'normal'); ?> value="normal">Normal</option>
-				<option <?php selected( $instance['style'], 'box'); ?>value="box">Box</option>
-  			<option <?php selected( $instance['style'], 'slash'); ?>value="slash">Slash</option>
-				<option <?php selected( $instance['style'], 'slash box'); ?>value="slash box">Slash-Box</option>
+			<label for="<?php echo $this->get_field_id('type'); ?>">Type:</label><br />
+			<select name="<?php echo $this->get_field_name('type'); ?>">
+  			<option <?php selected( $instance['type'], 'normal'); ?> value="normal">Normal</option>
+				<option <?php selected( $instance['type'], 'box'); ?>value="box">Box</option>
+  			<option <?php selected( $instance['type'], 'slash'); ?>value="slash">Slash</option>
+				<option <?php selected( $instance['type'], 'slash box'); ?>value="slash box">Slash-Box</option>
 			</select>
 		</p>
 	<?php }
 	public function update($new_instance, $old_instance){
 		$instance = $old_instance;
 		$instance['text'] = $new_instance['text'];
-		$instance['style'] = $new_instance['style'];
+		$instance['type'] = $new_instance['type'];
 		return $instance;
 	}
 }
