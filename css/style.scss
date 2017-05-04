@@ -681,7 +681,7 @@ html {
 		#services {
 			@include topBuffer();
 			text-align: center;
-			padding: 7rem 0 5rem;
+			padding: 7rem 0 0;
 			background-color: $lighter;
 			h2 {
 				font-weight: 200;
