@@ -28,6 +28,7 @@
 				<noscript>
 					<style>body{opacity: 1;}</style>
 				</noscript>
+				<!-- Icons derived from work by Maxim Basinski http://www.flaticon.com/authors/maxim-basinski. Licensed by Creative Commons BY 3.0 http://creativecommons.org/licenses/by/3.0/ -->
 			</footer>
 			<?php wp_footer(); ?>
 	</body>

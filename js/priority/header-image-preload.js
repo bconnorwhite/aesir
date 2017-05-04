@@ -25,5 +25,6 @@ function getHeaderImageSrc(path, width){
     return path + width + getHeaderImageExtension(width);
 }
 
+alert(window.screen.availWidth / document.documentElement.clientWidth);
 header_img = new Image();
 header_img.src = getHeaderImageSrc(getHeaderImagePath(), getHeaderImageSize(window.innerWidth));

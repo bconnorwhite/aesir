@@ -213,13 +213,13 @@ class service_widget extends WP_Widget {
 		$service_text = apply_filters('service_text', $instance['service_text']);
 		$service_link = apply_filters('service_link', $instance['service_link']);
 		$service_url = apply_filters('service_url', $instance['service_url']); ?>
-		<a href="<?php echo $service_url ?>" target="_blank" class="service">
+		<div class="service">
 				<?php echo file_get_contents((get_template_directory() . "/img/services/" . $service_icon)); ?>
 				<h3><?php echo $service_name ?></h3>
 				<p><?php echo $service_text ?></p>
 				<br />
-				<i><?php echo $service_link ?></i>
-		</a>
+				<a href="<?php echo $service_url ?>"><?php echo $service_link ?></a>
+		</div>
 	<?php }
 	public function form($instance){
 		$service_icon = !empty($instance['service_icon']) ? $instance['service_icon'] : '';

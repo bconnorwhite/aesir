@@ -1,4 +1,5 @@
 //This file manages images for the Aesir theme
+//Further functions are defined in ./priority/header-image-preload.js
 
 //Load any images marked as deferred
 function loadDeferredImages(){

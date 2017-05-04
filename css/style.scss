@@ -15,7 +15,7 @@ $serif-font:'Source Sans Serif', serif;
 //Colors
 $white: #fff;
 $lighter: #f0f0f0;
-$light: #e5e5e5;
+$light: #e0e0e0;
 $medLight: #979797;
 $med: #686868;
 $slight: #404040;
@@ -26,7 +26,7 @@ $clearLight: rgba(229,229,229,0.9);
 $clearWhite: rgba(256,256,256,0.9);
 
 //Measurements
-$topBarH: 64px;
+$topBarH: 4rem;
 $contact-bp: 960px;
 
 @mixin topBuffer(){
@@ -214,6 +214,12 @@ table {
 		}
 	}
 	.service svg {
+		.red: {
+			fill:#C45C4C;
+		}
+		.yellow {
+			fill:#D3D443;
+		}
 		.primary {
 			fill: #49637F;
 		}
@@ -223,7 +229,7 @@ table {
 		.primary-tint {
 			fill: #6C8298;
 		}
-		.secondary {
+		.secondary, .green {
 			fill: #5CBA5C;
 		}
 		.secondary-shade {
@@ -263,7 +269,7 @@ table {
 			background-color: $clearWhite;
 		}
 	}
-	a.service i {
+	.service a {
 		color: #458FCD !important;
 		&:hover {
 			color: #2678BD !important;
@@ -292,8 +298,14 @@ table {
 		.primary-tint {
 			fill: #458FCD;
 		}
-		.secondary {
+		.secondary, .green {
 			fill: #1CC480;
+		}
+		.yellow {
+			fill: #E7FF35;
+		}
+		.red {
+			fill: #FF455A;
 		}
 		.secondary-shade {
 			fill: #00AB66;
@@ -340,6 +352,15 @@ html {
   font-family: $sans-font;
   font-weight: 300;
   font-size: 16px;
+	@media(min-width: 1920px){
+		font-size: 20px;
+	}
+	@media(min-width: 2400px){
+		font-size: 32px;
+	}
+	@media(min-width: 5000px){
+		font-size: 64px;
+	}
   overflow-x: hidden;
   @media(max-width: 980px){
     font-size: 0.9375rem;
@@ -350,7 +371,6 @@ html {
   @media(max-width: 375px){
     font-size: 0.8215rem;
   }
-  background-color: $white;
   color: $dark;
 
 	a {
@@ -375,15 +395,15 @@ html {
 		font-family: $sans-font;
 		text-decoration: none !important;
 		border: 1px solid $dark;
-		padding: 13px 40px;
-		border-radius: 25px;
+		padding: 0.8125rem 2.5rem;
+		border-radius: 1.5625rem;
 		transition: 0.25s ease;
 		background-color: transparent;
 		cursor: pointer;
 		-webkit-appearance:none;
 
 		&:hover, &:focus, &:active {
-			padding: 13px 50px;
+			padding: 0.8125rem 3.125rem;
 		}
 		&:focus {
 			transition: 0.5s ease;
@@ -441,7 +461,9 @@ html {
 				height: 20px;
 				width: 25px;
 				display: none;
-				padding: ($topBarH/2 - 10) 0;
+				position: relative;
+				top: 1.125rem;
+				padding:  0;
         float: right;
 				fill: $light;
 				cursor: pointer;
@@ -509,24 +531,27 @@ html {
 				text-align: center;
 				width: 18.8em;
         position: relative;
-        top: -365px;
+        top: -23.75vw;
+				@media(max-width: 1600px){
+					top: -380px;
+				}
         @media(max-width: 1280px){
-          top: -305px;
+          top: -310px;
         }
         @media(max-width: 980px){
           top: -245px;
         }
         @media(max-width: 860px){
-          top: -225px;
+          top: -255px;
         }
         @media(max-width: 800px){
-          top: -205px;
+          top: -225px;
         }
         @media(max-width: 720px){
-          top: -325px;
+          top: -270px;
         }
         @media(max-width: 640px){
-          top: -290px;
+          top: -215px;
         }
         @media(max-width: 540px){
           top: -190px;
@@ -535,13 +560,13 @@ html {
           top: -180px;
         }
         @media(max-width: 414px){
-          top: -165px;
+          top: -170px;
         }
         @media(max-width: 375px){
-          top: -150px;
+          top: -155px;
         }
         @media(max-width: 320px){
-          top: -140px;
+          top: -145px;
         }
 
         h1 {
@@ -572,26 +597,31 @@ html {
 			position: relative;
 			z-index: 9;
       font-size: 2.25rem;
-      line-height: 3.5rem;
+			line-height: 1.55em;
+			@media(max-width: 540px){
+				font-size: 1.9rem;
+				line-height: 1.4em;
+			}
 			text-align: center;
 			@include topBuffer();
 			.container {
 				border-bottom: 1px solid $light;
 				background-color: $white;
 				.wrap {
-					max-width: 1080px;
+					margin: 0 auto;
+					width: 70%;
 					padding: 5rem 5%;
 					@media(max-width: 1300px){
-						padding: 5rem 0%;
+						padding: 5rem 10%;
+					}
+					@media(max-width: 720px){
+						padding: 3rem 10%;
 					}
 				}
 			}
       p {
 				@include serifFont();
         margin-bottom: 1em;
-				@media(max-width:540px){
-					font-size: 2.5rem;
-				}
       }
     }
 		#about.slash{
@@ -615,19 +645,14 @@ html {
 			margin: 0 0 -8vw;
 			.container {
 				background-color: transparent;
+				border-bottom: none;
 				.wrap {
 					background-color: $white;
 					border: 1px solid $light;
 					position: relative;
-					width: 70%;
 					top: -4vw;
-					@media(max-width: 720px){
-						width: 80%;
-						top: -3vw;
-					}
-					margin: 0 auto;
-					@media(max-width: 1300px){
-						padding: 5rem 5%;
+					@media(min-width:720px){
+						top: -2vw;
 					}
 				}
 			}
@@ -658,24 +683,35 @@ html {
 				font-size: 1.75rem;
 				line-height: 2em;
 				border-bottom: 1px solid $med;
-				margin-bottom: 1.25em;
 				text-transform: uppercase;
 				letter-spacing: 0.18em;
 				display: inline-block;
+				margin-bottom: 1.25em;
+				@media(max-width: 414px){
+					margin-bottom: 1em;
+				}
 			}
 			.wrap {
-				a.service {
+				.service {
 					color: $dark;
+					line-height: 1.4em;
+					font-size: 1.0625rem;
+					@media(max-width: 720px){
+						font-size: 1.125rem;
+					}
+					@media(max-width: 540px){
+						font-size: 1.25rem;
+					}
 					display: inline-block;
-					padding: 3rem 2rem;
+					padding: 3rem 3rem;
 					margin: 20px;
-					max-width: 400px;
-					width: 35%;
+					width: 32.5%;
+					@media(max-width: 1440px){
+						width: 35%;
+						padding: 3rem 2rem;
+					}
 					@media(max-width: 845px){
 						width: 70%;
-					}
-					@media(min-width: 2170px){
-						width: 17.5%;
 					}
 					background-color: $white;
 					border: 1px solid $light;
@@ -705,25 +741,25 @@ html {
 					}
 					p {
 						text-align: left;
-						line-height: 1.4em;
-						font-size: 1.0625rem;
 						height: 6em;
-						@media(max-width: 500px){
-							height: 8em;
-						}
-						@media(min-width: 846px){
-							height: 9em;
-						}
-						@media(min-width: 925px){
+						@media(max-width: 1440px){
 							height: 7em;
 						}
-						@media(min-width: 1440){
+						@media(max-width: 925px){
+							height: 9em;
+						}
+						@media(max-width: 846px){
 							height: 6em;
 						}
+						@media(max-width: 540px){
+							height: 7em;
+						}
+						@media(max-width: 414px){
+							height: 9em;
+						}
 					}
-					i {
+					a {
 						color: $med;
-				    font-size: 1.0625rem;
 				    font-style: italic;
 				    font-weight: 300;
 						&:hover {
@@ -1076,6 +1112,8 @@ html {
 		.four-o-four {
 			background-color: $white;
 			text-align: center;
+			position: relative;
+			z-index: 9;
 			h2 {
 				color: $dark;
 				font-size: 9rem;
@@ -1102,10 +1140,10 @@ html {
 
     footer {
       text-align: center;
-      line-height: 64px;
-			padding-top: 40px;
+      line-height: 4rem;
+			padding-top: 2.5rem;
 			@media(max-width: 520px){
-				padding-top: 25px;
+				padding-top: 1.5rem;
 			}
 			color: $white;
 			h2 {
@@ -1180,7 +1218,7 @@ html {
       width: 42%;
     }
     @media(max-width: 800px){
-      width: 59%;
+      width: 52%;
     }
     @media(max-width: 540px){
       display: none;
@@ -1206,7 +1244,7 @@ html {
 		width: 100%;
 		display: block;
 		text-align: center;
-		top: 64px;
+		top: 4rem;
 		left: 0;
 		padding-top: 12px;
 		height: 100vh;
