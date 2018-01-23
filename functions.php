@@ -60,6 +60,11 @@ function login_logo_url() {
 }
 add_filter('login_headerurl', 'login_logo_url');
 
+function login_title() {
+	return "connor white";
+}
+add_filter('login_headertitle', 'login_title');
+
 /* List Categories------------*/
 function add_post_cats($postcats){
 	if ($postcats) {
